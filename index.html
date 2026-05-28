@@ -315,22 +315,81 @@
     .contact-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem;
                      padding-top: 2.5rem; border-top: 1px solid rgba(201,148,26,0.1); }
 
+    /* ── Service accordion (desktop: hidden toggle elements) ── */
+    .service-chevron { display: none; }
+    .service-card-body { display: block; }
+    .service-card-header { display: block; }
+
+    /* ── Pillar card desktop layout ── */
+    .pillar-word { font-size: 1.6rem; }
+
     @media (max-width: 767px) {
+      /* Global overflow fix */
+      html { overflow-x: hidden; }
+
       /* Nav */
       .nav-desktop { display: none; }
 
-      /* Hero */
-      .hero-inner { padding: 3rem 1.25rem 4rem; }
-
-      /* Services — single column, full width cards */
+      /* Services — accordion */
       .services-grid { grid-template-columns: 1fr; }
+      .service-card {
+        padding: 1rem 1.125rem !important;
+        cursor: pointer;
+      }
+      .service-card:hover { transform: none; box-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.3); }
+      .service-card.open { border-color: rgba(201,148,26,0.28); }
+      .service-card-header {
+        display: flex; align-items: center; gap: 0.75rem;
+      }
+      .service-card-header .icon-bg-gold,
+      .service-card-header .icon-bg-green {
+        width: 34px !important; height: 34px !important;
+        border-radius: 5px; margin-bottom: 0 !important; flex-shrink: 0;
+      }
+      .service-card-header .icon-bg-gold svg,
+      .service-card-header .icon-bg-green svg {
+        width: 15px !important; height: 15px !important;
+      }
+      .service-card-header h3 {
+        font-size: 0.95rem !important; margin-bottom: 0 !important; line-height: 1.2;
+      }
+      .service-chevron {
+        display: block; margin-left: auto; flex-shrink: 0;
+        color: rgba(201,148,26,0.45);
+        transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), color 0.2s ease;
+      }
+      .service-card.open .service-chevron {
+        transform: rotate(180deg); color: #C9941A;
+      }
+      .service-card-body {
+        display: none;
+        padding-top: 0.875rem; margin-top: 0.875rem;
+        border-top: 1px solid rgba(201,148,26,0.1);
+      }
+      .service-card.open .service-card-body { display: block; }
+      .service-card-body p { font-size: 0.875rem; }
 
       /* About — stack vertically */
       .about-grid { display: block; }
       .about-stats-wrap { margin-top: 2.5rem; }
 
-      /* Pillars — 2 col on mobile (fits nicely at 390px) */
-      .pillars-grid { grid-template-columns: 1fr 1fr !important; gap: 0.875rem !important; }
+      /* Pillars — 2×2, tighter to fit 390px */
+      .pillars-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.75rem !important;
+      }
+      .pillar-card {
+        padding: 1.25rem 0.75rem !important;
+      }
+      .icon-circle-gold, .icon-circle-green {
+        width: 48px !important; height: 48px !important;
+        margin-bottom: 0.875rem !important;
+      }
+      .icon-circle-gold svg, .icon-circle-green svg {
+        width: 22px !important; height: 22px !important;
+      }
+      .pillar-word { font-size: 1.1rem !important; }
+      .pillar-card p { font-size: 0.72rem !important; line-height: 1.55 !important; }
 
       /* Contact strip — stack vertically */
       .contact-strip { flex-direction: column; gap: 1.25rem; text-align: center; }
@@ -338,12 +397,6 @@
       /* Footer — single column */
       .footer-grid { display: block; }
       .footer-col  { margin-bottom: 2rem; }
-
-      /* Section padding tighter on mobile */
-      .section-pad { padding: 4.5rem 0; }
-
-      /* Reduce hero orb size so it doesn't cause overflow */
-      .hero-orb-lg { width: 300px !important; height: 300px !important; }
     }
   </style>
 </head>
@@ -526,138 +579,180 @@
 
         <!-- Electrical Design -->
         <div class="service-card">
-          <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          <div class="service-card-header">
+            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
+              color:#F2EDE0; margin-bottom:0.625rem;">Electrical Design</h3>
+            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 7l5 5 5-5"/>
             </svg>
           </div>
-          <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-            color:#F2EDE0; margin-bottom:0.625rem;">Electrical Design</h3>
-          <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-            Power distribution, control systems, and wiring schematics designed to precision —
-            from concept to construction-ready documentation.
-          </p>
-          <a href="#contact" class="learn-more learn-more-gold">
-            Learn more
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-            </svg>
-          </a>
+          <div class="service-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
+              Power distribution, control systems, and wiring schematics designed to precision —
+              from concept to construction-ready documentation.
+            </p>
+            <a href="#contact" class="learn-more learn-more-gold">
+              Learn more
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <!-- Mechanical Engineering -->
         <div class="service-card">
-          <div class="icon-bg-green" style="margin-bottom:1.5rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/>
+          <div class="service-card-header">
+            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
+              color:#F2EDE0; margin-bottom:0.625rem;">Mechanical Engineering</h3>
+            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 7l5 5 5-5"/>
             </svg>
           </div>
-          <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-            color:#F2EDE0; margin-bottom:0.625rem;">Mechanical Engineering</h3>
-          <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-            Structural and mechanical system design — equipment layouts, piping, HVAC, and
-            full mechanical specifications for complex facilities.
-          </p>
-          <a href="#contact" class="learn-more learn-more-green">
-            Learn more
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-            </svg>
-          </a>
+          <div class="service-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
+              Structural and mechanical system design — equipment layouts, piping, HVAC, and
+              full mechanical specifications for complex facilities.
+            </p>
+            <a href="#contact" class="learn-more learn-more-green">
+              Learn more
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <!-- Systems Integration -->
         <div class="service-card">
-          <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="7" height="7" rx="1.5"/>
-              <rect x="15" y="3" width="7" height="7" rx="1.5"/>
-              <rect x="2" y="14" width="7" height="7" rx="1.5"/>
-              <rect x="15" y="14" width="7" height="7" rx="1.5"/>
-              <path d="M9 6.5h6M9 17.5h6M5.5 10v4M18.5 10v4"/>
+          <div class="service-card-header">
+            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="7" height="7" rx="1.5"/>
+                <rect x="15" y="3" width="7" height="7" rx="1.5"/>
+                <rect x="2" y="14" width="7" height="7" rx="1.5"/>
+                <rect x="15" y="14" width="7" height="7" rx="1.5"/>
+                <path d="M9 6.5h6M9 17.5h6M5.5 10v4M18.5 10v4"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
+              color:#F2EDE0; margin-bottom:0.625rem;">Systems Integration</h3>
+            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 7l5 5 5-5"/>
             </svg>
           </div>
-          <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-            color:#F2EDE0; margin-bottom:0.625rem;">Systems Integration</h3>
-          <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-            Seamlessly connecting mechanical and electrical subsystems into one cohesive whole —
-            bridging disciplines through expert coordination and integration.
-          </p>
-          <a href="#contact" class="learn-more learn-more-gold">
-            Learn more
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-            </svg>
-          </a>
+          <div class="service-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
+              Seamlessly connecting mechanical and electrical subsystems into one cohesive whole —
+              bridging disciplines through expert coordination and integration.
+            </p>
+            <a href="#contact" class="learn-more learn-more-gold">
+              Learn more
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <!-- CAD / BIM -->
         <div class="service-card">
-          <div class="icon-bg-green" style="margin-bottom:1.5rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3L2 8l10 5 10-5-10-5z"/>
-              <path d="M2 12l10 5 10-5"/>
-              <path d="M2 17l10 5 10-5"/>
+          <div class="service-card-header">
+            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3L2 8l10 5 10-5-10-5z"/>
+                <path d="M2 12l10 5 10-5"/>
+                <path d="M2 17l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
+              color:#F2EDE0; margin-bottom:0.625rem;">CAD / BIM Design</h3>
+            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 7l5 5 5-5"/>
             </svg>
           </div>
-          <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-            color:#F2EDE0; margin-bottom:0.625rem;">CAD / BIM Design</h3>
-          <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-            High-fidelity 2D and 3D CAD drawings and BIM models that ensure accuracy,
-            eliminate clashes, and accelerate construction delivery.
-          </p>
-          <a href="#contact" class="learn-more learn-more-green">
-            Learn more
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-            </svg>
-          </a>
+          <div class="service-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
+              High-fidelity 2D and 3D CAD drawings and BIM models that ensure accuracy,
+              eliminate clashes, and accelerate construction delivery.
+            </p>
+            <a href="#contact" class="learn-more learn-more-green">
+              Learn more
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <!-- Project Management -->
         <div class="service-card">
-          <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2"/>
-              <path d="M16 2v4M8 2v4M3 10h18"/>
-              <path d="M8 14h2M8 18h2M13 14h3M13 18h3"/>
+          <div class="service-card-header">
+            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <path d="M16 2v4M8 2v4M3 10h18"/>
+                <path d="M8 14h2M8 18h2M13 14h3M13 18h3"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
+              color:#F2EDE0; margin-bottom:0.625rem;">Project Management</h3>
+            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 7l5 5 5-5"/>
             </svg>
           </div>
-          <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-            color:#F2EDE0; margin-bottom:0.625rem;">Project Management</h3>
-          <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-            End-to-end project oversight from scope definition to final handover, keeping
-            complex multi-discipline projects on time and on budget.
-          </p>
-          <a href="#contact" class="learn-more learn-more-gold">
-            Learn more
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-            </svg>
-          </a>
+          <div class="service-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
+              End-to-end project oversight from scope definition to final handover, keeping
+              complex multi-discipline projects on time and on budget.
+            </p>
+            <a href="#contact" class="learn-more learn-more-gold">
+              Learn more
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <!-- Commissioning -->
         <div class="service-card">
-          <div class="icon-bg-green" style="margin-bottom:1.5rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 12l2 2 4-4"/>
-              <circle cx="12" cy="12" r="10"/>
+          <div class="service-card-header">
+            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12l2 2 4-4"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
+              color:#F2EDE0; margin-bottom:0.625rem;">Commissioning &amp; Testing</h3>
+            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 7l5 5 5-5"/>
             </svg>
           </div>
-          <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-            color:#F2EDE0; margin-bottom:0.625rem;">Commissioning &amp; Testing</h3>
-          <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-            Rigorous site testing, verification, and commissioning ensuring every integrated
-            system performs to specification before client handover.
-          </p>
-          <a href="#contact" class="learn-more learn-more-green">
-            Learn more
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-            </svg>
-          </a>
+          <div class="service-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
+              Rigorous site testing, verification, and commissioning ensuring every integrated
+              system performs to specification before client handover.
+            </p>
+            <a href="#contact" class="learn-more learn-more-green">
+              Learn more
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -759,7 +854,7 @@
   <!-- ═══════════════════════════════════════
        4 PILLARS
   ═══════════════════════════════════════ -->
-  <section id="approach" style="padding:7rem 0; background:#09090F; position:relative;">
+  <section id="approach" style="padding:7rem 0; background:#09090F; position:relative; overflow:hidden;">
     <div style="position:absolute; top:-50px; left:50%; transform:translateX(-50%); width:700px; height:300px; border-radius:50%;
       background:radial-gradient(ellipse at center, rgba(201,148,26,0.04) 0%, transparent 70%); pointer-events:none;"></div>
 
@@ -787,7 +882,7 @@
               <circle cx="14" cy="14" r="11"/>
             </svg>
           </div>
-          <div class="display text-gold" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">DESIGN</div>
+          <div class="display pillar-word text-gold" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">DESIGN</div>
           <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">
             Every project begins with thorough design — understanding requirements, constraints,
             and goals before a single drawing is made.
@@ -802,7 +897,7 @@
               <path d="M14 6V4"/>
             </svg>
           </div>
-          <div class="display text-green" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">INNOVATE</div>
+          <div class="display pillar-word text-green" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">INNOVATE</div>
           <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">
             We challenge convention, applying smart solutions and emerging technologies
             to deliver outcomes that exceed expectations.
@@ -816,7 +911,7 @@
               <path d="M14 3v3M14 22v3M3 14h3M22 14h3M6.22 6.22l2.12 2.12M19.66 19.66l2.12 2.12M19.66 8.34l2.12-2.12M6.22 21.78l2.12-2.12"/>
             </svg>
           </div>
-          <div class="display text-gold" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">ENGINEER</div>
+          <div class="display pillar-word text-gold" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">ENGINEER</div>
           <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">
             Technical excellence in execution — detailed engineering, precise calculations,
             and quality documentation at every stage.
@@ -829,7 +924,7 @@
               <path d="M23 4L12 15M23 4l-7 19-4-9-9-4 20-6z"/>
             </svg>
           </div>
-          <div class="display text-green" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">DELIVER</div>
+          <div class="display pillar-word text-green" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">DELIVER</div>
           <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">
             On schedule, on budget, to specification. We see every project through to final
             handover — no exceptions, no shortcuts.
@@ -1029,6 +1124,17 @@
         if (!target) return;
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* Service card accordion (mobile only) */
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('click', function() {
+        if (window.innerWidth <= 767) {
+          const wasOpen = this.classList.contains('open');
+          document.querySelectorAll('.service-card').forEach(c => c.classList.remove('open'));
+          if (!wasOpen) this.classList.add('open');
+        }
       });
     });
 
