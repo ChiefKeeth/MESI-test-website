@@ -15,7 +15,7 @@
 - If the server is already running, do not start a second instance.
 
 ## Screenshot Workflow
-- Puppeteer is installed at `C:/Users/nateh/AppData/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users/nateh/.cache/puppeteer/`.
+- Puppeteer is installed at `C:\Users\Keethon\AppData\Roaming\npm\node_modules\puppeteer`. Chrome cache is at `C:\Users\Keethon\.cache\puppeteer\chrome\win64-149.0.7827.22\chrome-win64\chrome.exe`.
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
 - Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
 - Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
@@ -52,3 +52,7 @@
 - Do not stop after one screenshot pass
 - Do not use `transition-all`
 - Do not use default Tailwind blue/indigo as primary color
+
+## Online Push Rules
+- We are syncing all of the changes to GitHub which will automatically be pushed to Vercel, but when I make changes here were always going to test on local host until i tell you explicitly to push that to GitHub
+ 
