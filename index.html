@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MESI — Mechanical Electrical Systems Integration</title>
+  <meta name="description" content="MESI — Multidisciplinary engineering and industrial solutions for mining, automation, mechanical, logistics and infrastructure sectors across Southern Africa.">
+  <title>MESI — Integrated Engineering &amp; Industrial Solutions | Southern Africa</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,433 +18,317 @@
             emerald: { DEFAULT: '#1A7A2E', bright: '#22A845', dim: '#0F4A1C' },
             surface: { deep: '#070A0D', base: '#0E1218', elevated: '#161B23', floating: '#1E242E' }
           },
-          fontFamily: {
-            display: ['Rajdhani', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
-          }
+          fontFamily: { display: ['Rajdhani', 'sans-serif'], body: ['Inter', 'sans-serif'] }
         }
       }
     }
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      background-color: #070A0D;
-      color: #F2EDE0;
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+      background-color: #070A0D; color: #F2EDE0;
+      font-family: 'Inter', sans-serif; font-weight: 300;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased;
     }
-
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: #070A0D; }
     ::-webkit-scrollbar-thumb { background: rgba(201,148,26,0.3); border-radius: 3px; }
 
-    /* ── Textures & Backgrounds ── */
+    /* ── Backgrounds ── */
     .circuit-bg {
       background-image:
         linear-gradient(rgba(201,148,26,0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(201,148,26,0.025) 1px, transparent 1px);
       background-size: 44px 44px;
     }
-
     .grain::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1;
+      pointer-events: none; z-index: 1;
     }
 
-    /* ── Text treatments ── */
+    /* ── Text ── */
     .text-gold {
       background: linear-gradient(135deg, #C9941A 0%, #F0C040 50%, #C9941A 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
     .text-green {
       background: linear-gradient(135deg, #22A845 0%, #1A7A2E 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
+    .divider-gold { height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(201,148,26,0.5) 30%, rgba(201,148,26,0.5) 70%, transparent 100%); }
 
-    /* ── Dividers ── */
-    .divider-gold {
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(201,148,26,0.5) 30%, rgba(201,148,26,0.5) 70%, transparent 100%);
-    }
-
-    /* ── Typography ── */
+    /* ── Type ── */
     .display { font-family: 'Rajdhani', sans-serif; }
-    .label {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #C9941A;
-    }
-    .hero-h1 {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      line-height: 1.02;
-      letter-spacing: -0.025em;
-    }
-    .section-h2 {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      line-height: 1.07;
-      letter-spacing: -0.02em;
-    }
+    .label { font-family: 'Rajdhani', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #C9941A; }
+    .hero-h1 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(2.75rem, 7vw, 5.5rem); line-height: 1.02; letter-spacing: -0.025em; }
+    .section-h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.07; letter-spacing: -0.02em; }
 
     /* ── Buttons ── */
     .btn-gold {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem;
-      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
-      color: #070A0D;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #070A0D;
       background: linear-gradient(135deg, #C9941A 0%, #E8B030 100%);
       padding: 0.875rem 2.25rem; border-radius: 3px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 8px 24px rgba(201,148,26,0.28), inset 0 1px 0 rgba(255,255,255,0.18);
-      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, opacity 0.2s ease;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
     }
-    .btn-gold:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 16px 40px rgba(201,148,26,0.38), inset 0 1px 0 rgba(255,255,255,0.18);
-    }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 16px 40px rgba(201,148,26,0.38), inset 0 1px 0 rgba(255,255,255,0.18); }
     .btn-gold:active { transform: translateY(-1px); }
     .btn-gold:focus-visible { outline: 2px solid #E8B030; outline-offset: 3px; }
-
     .btn-outline {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.9rem;
-      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
-      color: #D4C8A8;
-      background: transparent;
-      padding: 0.875rem 2.25rem; border-radius: 3px;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #D4C8A8;
+      background: transparent; padding: 0.875rem 2.25rem; border-radius: 3px;
       border: 1px solid rgba(212,200,168,0.22);
       transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), border-color 0.2s ease, background 0.2s ease;
     }
-    .btn-outline:hover {
-      transform: translateY(-3px);
-      border-color: rgba(201,148,26,0.55);
-      background: rgba(201,148,26,0.06);
-    }
+    .btn-outline:hover { transform: translateY(-3px); border-color: rgba(201,148,26,0.55); background: rgba(201,148,26,0.06); }
     .btn-outline:active { transform: translateY(-1px); }
-    .btn-outline:focus-visible { outline: 2px solid rgba(201,148,26,0.6); outline-offset: 3px; }
-
-    .btn-sm {
-      padding: 0.5rem 1.375rem;
-      font-size: 0.8rem;
-    }
+    .btn-sm { padding: 0.5rem 1.375rem; font-size: 0.8rem; }
 
     /* ── Nav ── */
     .nav-link {
-      font-family: 'Rajdhani', sans-serif; font-weight: 500;
-      font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: #8A8070; text-decoration: none;
-      position: relative;
-      transition: color 0.2s ease;
+      font-family: 'Rajdhani', sans-serif; font-weight: 500; font-size: 0.875rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #8A8070; text-decoration: none;
+      position: relative; transition: color 0.2s ease;
     }
-    .nav-link::after {
-      content: ''; position: absolute; bottom: -3px; left: 0; right: 100%;
-      height: 1px; background: #C9941A;
-      transition: right 0.3s ease;
-    }
+    .nav-link::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 100%; height: 1px; background: #C9941A; transition: right 0.3s ease; }
     .nav-link:hover { color: #E8B030; }
     .nav-link:hover::after { right: 0; }
-    .nav-link:focus-visible { outline: 2px solid rgba(201,148,26,0.5); outline-offset: 4px; border-radius: 2px; }
 
     /* ── Cards ── */
-    .service-card {
+    .division-card {
       background: linear-gradient(145deg, #0C1016 0%, #131820 100%);
-      border: 1px solid rgba(201,148,26,0.09);
-      border-radius: 6px;
-      padding: 2.25rem;
+      border: 1px solid rgba(201,148,26,0.09); border-radius: 6px; padding: 2.25rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.3);
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s ease, box-shadow 0.3s ease;
       position: relative; overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    .service-card::before {
+    .division-card::before {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(135deg, rgba(201,148,26,0.03) 0%, transparent 60%);
       pointer-events: none;
     }
-    .service-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(201,148,26,0.28);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 24px 56px rgba(0,0,0,0.35), 0 0 40px rgba(201,148,26,0.05);
+    .division-card::after {
+      content: attr(data-num);
+      position: absolute; right: 1.25rem; top: 0.25rem;
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 5.5rem; line-height: 1;
+      color: rgba(201,148,26,0.045); pointer-events: none; z-index: 0;
     }
+    .division-card > * { position: relative; z-index: 1; }
+    .division-card:hover { transform: translateY(-7px); border-color: rgba(201,148,26,0.28); box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 24px 56px rgba(0,0,0,0.35), 0 0 40px rgba(201,148,26,0.05); }
+    .division-card.green { border-color: rgba(34,168,69,0.09); }
+    .division-card.green::before { background: linear-gradient(135deg, rgba(34,168,69,0.03) 0%, transparent 60%); }
+    .division-card.green::after { color: rgba(34,168,69,0.045); }
+    .division-card.green:hover { border-color: rgba(34,168,69,0.28); box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 24px 56px rgba(0,0,0,0.35), 0 0 40px rgba(34,168,69,0.05); }
 
     .pillar-card {
       background: linear-gradient(145deg, #0C1016 0%, #131820 100%);
-      border: 1px solid rgba(26,122,46,0.12);
-      border-radius: 6px;
-      padding: 2.25rem 1.75rem;
+      border: 1px solid rgba(26,122,46,0.12); border-radius: 6px; padding: 2.25rem 1.75rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s ease;
-      text-align: center;
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s ease; text-align: center;
     }
-    .pillar-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(34,168,69,0.35);
-    }
+    .pillar-card:hover { transform: translateY(-5px); border-color: rgba(34,168,69,0.35); }
 
     .stat-card {
       background: linear-gradient(145deg, #131820 0%, #1A2030 100%);
-      border: 1px solid rgba(201,148,26,0.1);
-      border-radius: 6px;
-      padding: 2rem;
+      border: 1px solid rgba(201,148,26,0.1); border-radius: 6px; padding: 2rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03);
     }
 
-    /* ── Service icon bg ── */
-    .icon-bg-gold {
-      width: 52px; height: 52px; border-radius: 8px;
-      background: rgba(201,148,26,0.1);
-      display: flex; align-items: center; justify-content: center;
-      border: 1px solid rgba(201,148,26,0.15);
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(201,148,26,0.08);
-    }
-    .icon-bg-green {
-      width: 52px; height: 52px; border-radius: 8px;
-      background: rgba(34,168,69,0.1);
-      display: flex; align-items: center; justify-content: center;
-      border: 1px solid rgba(34,168,69,0.15);
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(34,168,69,0.08);
-    }
-    .icon-circle-gold {
-      width: 68px; height: 68px; border-radius: 50%;
-      background: radial-gradient(circle at 35% 35%, rgba(201,148,26,0.18) 0%, rgba(201,148,26,0.06) 100%);
-      border: 1px solid rgba(201,148,26,0.2);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-    }
-    .icon-circle-green {
-      width: 68px; height: 68px; border-radius: 50%;
-      background: radial-gradient(circle at 35% 35%, rgba(34,168,69,0.18) 0%, rgba(34,168,69,0.06) 100%);
-      border: 1px solid rgba(34,168,69,0.2);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-    }
+    .vm-card { border-radius: 8px; padding: 2.5rem; position: relative; overflow: hidden; }
+    .vm-card-gold { background: linear-gradient(145deg, #0F1218, #151C26); border: 1px solid rgba(201,148,26,0.18); box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+    .vm-card-green { background: linear-gradient(145deg, #0A1210, #10201A); border: 1px solid rgba(34,168,69,0.18); box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
 
-    /* ── Orbs ── */
-    .orb {
-      position: absolute; border-radius: 50%; pointer-events: none;
+    .value-card {
+      background: linear-gradient(145deg, #0C1016, #131820);
+      border: 1px solid rgba(201,148,26,0.08); border-radius: 6px; padding: 1.25rem 0.875rem;
+      text-align: center;
+      transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
     }
+    .value-card:hover { border-color: rgba(201,148,26,0.3); transform: translateY(-3px); }
 
-    /* ── Learn more link ── */
-    .learn-more {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: 'Rajdhani', sans-serif; font-weight: 600;
-      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none; transition: gap 0.2s ease, opacity 0.2s ease;
-      margin-top: 1.5rem;
+    .feature-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.875rem 1rem;
+      background: rgba(201,148,26,0.03); border: 1px solid rgba(201,148,26,0.09); border-radius: 5px;
+      transition: border-color 0.2s ease, background 0.2s ease;
     }
-    .learn-more:hover { gap: 10px; opacity: 0.9; }
-    .learn-more-gold { color: #C9941A; }
-    .learn-more-green { color: #22A845; }
+    .feature-item:hover { border-color: rgba(201,148,26,0.22); background: rgba(201,148,26,0.06); }
 
-    /* ── Sector pills ── */
-    .pill {
-      padding: 0.45rem 1.25rem;
-      border: 1px solid rgba(201,148,26,0.14);
-      border-radius: 100px;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 0.8rem; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: #8A8070;
-      transition: border-color 0.2s ease, color 0.2s ease;
+    /* ── Icons ── */
+    .icon-bg-gold { width: 52px; height: 52px; border-radius: 8px; background: rgba(201,148,26,0.1); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(201,148,26,0.15); flex-shrink: 0; box-shadow: 0 2px 8px rgba(201,148,26,0.08); }
+    .icon-bg-green { width: 52px; height: 52px; border-radius: 8px; background: rgba(34,168,69,0.1); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(34,168,69,0.15); flex-shrink: 0; box-shadow: 0 2px 8px rgba(34,168,69,0.08); }
+    .icon-circle-gold { width: 68px; height: 68px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, rgba(201,148,26,0.18) 0%, rgba(201,148,26,0.06) 100%); border: 1px solid rgba(201,148,26,0.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+    .icon-circle-green { width: 68px; height: 68px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, rgba(34,168,69,0.18) 0%, rgba(34,168,69,0.06) 100%); border: 1px solid rgba(34,168,69,0.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+    .icon-sm { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── Chips ── */
+    .chip {
+      padding: 0.2rem 0.5rem; background: rgba(201,148,26,0.07); border: 1px solid rgba(201,148,26,0.14);
+      border-radius: 3px; font-family: 'Rajdhani', sans-serif; font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #6B6560;
     }
+    .chip-green { background: rgba(34,168,69,0.07); border-color: rgba(34,168,69,0.14); }
+
+    /* ── Pills (industries) ── */
+    .pill { padding: 0.45rem 1.25rem; border: 1px solid rgba(201,148,26,0.14); border-radius: 100px; font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8070; transition: border-color 0.2s ease, color 0.2s ease; }
     .pill:hover { border-color: rgba(201,148,26,0.4); color: #C9941A; }
 
-    /* ── Dot bullets ── */
+    /* ── Misc ── */
+    .orb { position: absolute; border-radius: 50%; pointer-events: none; }
     .dot-gold { width: 6px; height: 6px; border-radius: 50%; background: #C9941A; flex-shrink: 0; }
     .dot-green { width: 6px; height: 6px; border-radius: 50%; background: #22A845; flex-shrink: 0; }
-
-    /* ── Contact icons ── */
-    .contact-item {
-      display: flex; align-items: center; gap: 10px;
-      color: #6B6560; font-family: 'Rajdhani', sans-serif; font-size: 0.875rem; font-weight: 500;
-    }
-
-    /* ── Footer ── */
-    .footer-link {
-      color: #4A4540; font-size: 0.875rem; text-decoration: none;
-      transition: color 0.2s ease;
-      display: block;
-    }
+    .learn-more { display: inline-flex; align-items: center; gap: 6px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: gap 0.2s ease; margin-top: 1.5rem; }
+    .learn-more:hover { gap: 10px; }
+    .learn-more-gold { color: #C9941A; }
+    .learn-more-green { color: #22A845; }
+    .contact-item { display: flex; align-items: center; gap: 10px; color: #6B6560; font-family: 'Rajdhani', sans-serif; font-size: 0.875rem; font-weight: 500; }
+    .footer-link { color: #4A4540; font-size: 0.875rem; text-decoration: none; transition: color 0.2s ease; display: block; }
     .footer-link:hover { color: #C9941A; }
 
     /* ── Animations ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
     .anim-0 { animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) both; }
     .anim-1 { animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) 0.12s both; }
     .anim-2 { animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) 0.24s both; }
     .anim-3 { animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) 0.36s both; }
     .anim-4 { animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) 0.48s both; }
-
-    @keyframes spin-slow {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
+    @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .spin-slow { animation: spin-slow 40s linear infinite; }
-
-    @keyframes pulse-orb {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50%       { opacity: 1;   transform: scale(1.04); }
-    }
+    @keyframes pulse-orb { 0%,100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
     .pulse-orb { animation: pulse-orb 8s ease-in-out infinite; }
 
-    /* ── Responsive layout classes ── */
-    .nav-desktop   { display: flex; align-items: center; gap: 2.5rem; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 1.25rem; }
-    .about-grid    { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .footer-grid   { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-    .contact-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem;
-                     padding-top: 2.5rem; border-top: 1px solid rgba(201,148,26,0.1); }
+    /* ── Layout grid classes ── */
+    .nav-desktop { display: flex; align-items: center; gap: 2.5rem; }
+    .divisions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.875rem; }
+    .why-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .contact-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(201,148,26,0.1); }
 
-    /* ── Service accordion (desktop: hidden toggle elements) ── */
-    .service-chevron { display: none; }
-    .service-card-body { display: block; }
-    .service-card-header { display: block; }
-
-    /* ── Pillar card desktop layout ── */
+    /* ── Accordion (desktop = always open) ── */
+    .division-chevron { display: none; }
+    .division-card-body { display: block; }
+    .division-card-header { display: block; }
     .pillar-word { font-size: 1.6rem; }
 
+    /* ── MOBILE ── */
     @media (max-width: 767px) {
-      /* Global overflow fix */
       html { overflow-x: hidden; }
-
-      /* Nav */
       .nav-desktop { display: none; }
 
-      /* Services — accordion */
-      .services-grid { grid-template-columns: 1fr; }
-      .service-card {
-        padding: 1rem 1.125rem !important;
-        cursor: pointer;
-      }
-      .service-card:hover { transform: none; box-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.3); }
-      .service-card.open { border-color: rgba(201,148,26,0.28); }
-      .service-card-header {
-        display: flex; align-items: center; gap: 0.75rem;
-      }
-      .service-card-header .icon-bg-gold,
-      .service-card-header .icon-bg-green {
-        width: 34px !important; height: 34px !important;
-        border-radius: 5px; margin-bottom: 0 !important; flex-shrink: 0;
-      }
-      .service-card-header .icon-bg-gold svg,
-      .service-card-header .icon-bg-green svg {
-        width: 15px !important; height: 15px !important;
-      }
-      .service-card-header h3 {
-        font-size: 0.95rem !important; margin-bottom: 0 !important; line-height: 1.2;
-      }
-      .service-chevron {
-        display: block; margin-left: auto; flex-shrink: 0;
-        color: rgba(201,148,26,0.45);
-        transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), color 0.2s ease;
-      }
-      .service-card.open .service-chevron {
-        transform: rotate(180deg); color: #C9941A;
-      }
-      .service-card-body {
-        display: none;
-        padding-top: 0.875rem; margin-top: 0.875rem;
-        border-top: 1px solid rgba(201,148,26,0.1);
-      }
-      .service-card.open .service-card-body { display: block; }
-      .service-card-body p { font-size: 0.875rem; }
+      /* Reduce vertical section padding on mobile */
+      section { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
 
-      /* About — stack vertically */
+      /* Hero inner content padding */
+      .hero-inner { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+
+      /* HSE flex gap when stacking */
+      .hse-flex { gap: 2rem !important; }
+
+      /* Hero description text */
+      .hero-desc { font-size: 0.975rem !important; margin-bottom: 2rem !important; }
+
+      /* Divisions accordion */
+      .divisions-grid { grid-template-columns: 1fr; }
+      .division-card { padding: 1rem 1.125rem !important; cursor: pointer; }
+      .division-card:hover { transform: none; box-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.3); }
+      .division-card.open { border-color: rgba(201,148,26,0.28) !important; }
+      .division-card.green.open { border-color: rgba(34,168,69,0.28) !important; }
+      .division-card-header { display: flex; align-items: center; gap: 0.75rem; }
+      .division-card-header .icon-bg-gold,
+      .division-card-header .icon-bg-green { width: 34px !important; height: 34px !important; border-radius: 5px; margin-bottom: 0 !important; flex-shrink: 0; }
+      .division-card-header .icon-bg-gold svg,
+      .division-card-header .icon-bg-green svg { width: 15px !important; height: 15px !important; }
+      .division-card-header h3 { font-size: 0.95rem !important; margin-bottom: 0 !important; line-height: 1.2; }
+      .division-chevron { display: block; margin-left: auto; flex-shrink: 0; color: rgba(201,148,26,0.45); transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), color 0.2s ease; }
+      .division-card.open .division-chevron { transform: rotate(180deg); color: #C9941A; }
+      .division-card-body { display: none; padding-top: 0.875rem; margin-top: 0.875rem; border-top: 1px solid rgba(201,148,26,0.1); }
+      .division-card.open .division-card-body { display: block; }
+
+      /* About */
       .about-grid { display: block; }
       .about-stats-wrap { margin-top: 2.5rem; }
 
-      /* Pillars — 2×2, tighter to fit 390px */
-      .pillars-grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 0.75rem !important;
-      }
-      .pillar-card {
-        padding: 1.25rem 0.75rem !important;
-      }
-      .icon-circle-gold, .icon-circle-green {
-        width: 48px !important; height: 48px !important;
-        margin-bottom: 0.875rem !important;
-      }
-      .icon-circle-gold svg, .icon-circle-green svg {
-        width: 22px !important; height: 22px !important;
-      }
+      /* Pillars */
+      .pillars-grid { grid-template-columns: 1fr 1fr !important; gap: 0.75rem !important; }
+      .pillar-card { padding: 1.25rem 0.75rem !important; }
+      .icon-circle-gold, .icon-circle-green { width: 48px !important; height: 48px !important; margin-bottom: 0.875rem !important; }
+      .icon-circle-gold svg, .icon-circle-green svg { width: 22px !important; height: 22px !important; }
       .pillar-word { font-size: 1.1rem !important; }
       .pillar-card p { font-size: 0.72rem !important; line-height: 1.55 !important; }
 
-      /* Contact strip — stack vertically */
+      /* VM */
+      .vm-grid { grid-template-columns: 1fr; }
+
+      /* Values */
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+
+      /* Why choose */
+      .why-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .features-grid { grid-template-columns: 1fr; }
+
+      /* Contact strip */
       .contact-strip { flex-direction: column; gap: 1.25rem; text-align: center; }
 
-      /* Footer — single column */
+      /* Footer */
       .footer-grid { display: block; }
-      .footer-col  { margin-bottom: 2rem; }
+      .footer-col { margin-bottom: 2rem; }
+    }
+
+    /* ── DESKTOP overrides for accordion ── */
+    @media (min-width: 768px) {
+      .division-chevron { display: none; }
+      .division-card-body { display: block !important; }
+      .division-card-header { display: block; }
+      .division-card { cursor: default; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════ -->
+  <!-- ═══ NAVIGATION ═══ -->
   <nav id="nav" style="position:fixed; top:0; left:0; right:0; z-index:100;
     background:rgba(7,10,13,0.82); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
     border-bottom:1px solid rgba(201,148,26,0.1);">
     <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;
       display:flex; align-items:center; justify-content:space-between; height:68px;">
 
-      <!-- Brand -->
       <a href="#" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
         <div style="width:42px; height:42px; border-radius:6px; overflow:hidden; flex-shrink:0;
           box-shadow:0 2px 8px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,148,26,0.15);">
           <img src="brand_assets/MESI%20Logo.jpeg" alt="MESI" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div>
-          <div style="font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1.3rem;
-            letter-spacing:0.1em; line-height:1;
-            background:linear-gradient(135deg,#C9941A,#E8B030); -webkit-background-clip:text;
-            background-clip:text; -webkit-text-fill-color:transparent;">MESI</div>
+          <div style="font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1.3rem; letter-spacing:0.1em; line-height:1;
+            background:linear-gradient(135deg,#C9941A,#E8B030); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">MESI</div>
           <div style="font-size:0.55rem; letter-spacing:0.14em; color:#4A4540; text-transform:uppercase; line-height:1.2; margin-top:1px;">
-            Mech · Elec · Systems Integration
+            Engineering &amp; Industrial Solutions
           </div>
         </div>
       </a>
 
-      <!-- Desktop links -->
       <div class="nav-desktop">
-        <a href="#services" class="nav-link">Services</a>
+        <a href="#divisions" class="nav-link">Divisions</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#approach" class="nav-link">Approach</a>
+        <a href="#why" class="nav-link">Why MESI</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
 
-      <!-- Right actions -->
       <div style="display:flex; align-items:center; gap:12px;">
-        <a href="#contact" class="btn-gold btn-sm" style="display:none;" id="nav-cta">Get a Quote</a>
         <a href="#contact" class="btn-gold btn-sm hidden md:inline-flex">Get a Quote</a>
         <button onclick="toggleMobileMenu()" aria-label="Menu"
-          style="display:flex; align-items:center; justify-content:center;
-          width:38px; height:38px; border:1px solid rgba(201,148,26,0.2); border-radius:4px;
-          background:rgba(201,148,26,0.06); cursor:pointer; color:#C9941A; transition:background 0.2s ease;"
+          style="display:flex; align-items:center; justify-content:center; width:38px; height:38px;
+          border:1px solid rgba(201,148,26,0.2); border-radius:4px; background:rgba(201,148,26,0.06);
+          cursor:pointer; color:#C9941A; transition:background 0.2s ease;"
           class="md:hidden"
           onmouseover="this.style.background='rgba(201,148,26,0.12)'"
           onmouseout="this.style.background='rgba(201,148,26,0.06)'">
@@ -454,12 +339,11 @@
       </div>
     </div>
 
-    <!-- Mobile menu -->
     <div id="mobile-menu" style="display:none; border-top:1px solid rgba(201,148,26,0.08); padding:1.25rem 1.5rem 1.5rem;">
       <div style="display:flex; flex-direction:column; gap:1.25rem;">
-        <a href="#services" class="nav-link" onclick="closeMobileMenu()">Services</a>
+        <a href="#divisions" class="nav-link" onclick="closeMobileMenu()">Divisions</a>
         <a href="#about" class="nav-link" onclick="closeMobileMenu()">About</a>
-        <a href="#approach" class="nav-link" onclick="closeMobileMenu()">Approach</a>
+        <a href="#why" class="nav-link" onclick="closeMobileMenu()">Why MESI</a>
         <a href="#contact" class="nav-link" onclick="closeMobileMenu()">Contact</a>
         <a href="#contact" class="btn-gold" style="margin-top:0.5rem; text-align:center;" onclick="closeMobileMenu()">Get a Quote</a>
       </div>
@@ -467,80 +351,50 @@
   </nav>
 
 
-  <!-- ═══════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════ -->
+  <!-- ═══ HERO ═══ -->
   <section style="position:relative; min-height:100vh; display:flex; align-items:center;
     background-color:#070A0D; overflow:hidden; padding-top:68px;" class="circuit-bg grain">
 
-    <!-- Gradient orbs -->
     <div class="orb pulse-orb" style="width:700px; height:700px; top:-200px; right:-180px;
       background:radial-gradient(circle, rgba(201,148,26,0.07) 0%, transparent 70%);"></div>
     <div class="orb" style="width:500px; height:500px; bottom:-150px; left:-100px;
       background:radial-gradient(circle, rgba(26,122,46,0.06) 0%, transparent 70%);"></div>
-    <div class="orb" style="width:300px; height:300px; top:30%; left:38%;
-      background:radial-gradient(circle, rgba(201,148,26,0.04) 0%, transparent 70%);"></div>
 
-    <!-- Bottom fade -->
     <div style="position:absolute; bottom:0; left:0; right:0; height:180px;
       background:linear-gradient(to top, #070A0D, transparent); z-index:2; pointer-events:none;"></div>
 
-    <div style="max-width:1280px; margin:0 auto; padding:5rem 1.5rem; position:relative; z-index:3; width:100%;">
-      <div style="max-width:700px;">
+    <div class="hero-inner" style="max-width:1280px; margin:0 auto; padding:5rem 1.5rem; position:relative; z-index:3; width:100%;">
+      <div style="max-width:720px;">
 
-        <!-- Label -->
         <div class="anim-0" style="display:flex; align-items:center; gap:12px; margin-bottom:1.75rem;">
           <div style="width:36px; height:1px; background:#C9941A;"></div>
-          <span class="label">Mechanical · Electrical · Systems Integration</span>
+          <span class="label">Multidisciplinary Engineering · Southern Africa</span>
         </div>
 
-        <!-- Heading -->
         <h1 class="hero-h1 anim-1" style="margin-bottom:1.75rem;">
-          <span style="color:#F2EDE0;">Engineering</span><br>
-          <span class="text-gold">Integrated</span><br>
-          <span style="color:#F2EDE0;">Systems.</span>
+          <span style="color:#F2EDE0;">One Company.</span><br>
+          <span class="text-gold">Every Engineering</span><br>
+          <span style="color:#F2EDE0;">Solution.</span>
         </h1>
 
-        <!-- Subheading -->
-        <p class="anim-2" style="font-size:1.125rem; line-height:1.75; color:#8A8070;
-          font-weight:300; max-width:540px; margin-bottom:2.75rem;">
-          Where mechanical precision meets electrical innovation. We design, engineer, and deliver
-          fully integrated systems that power the projects of tomorrow.
+        <p class="anim-2 hero-desc" style="font-size:1.125rem; line-height:1.8; color:#8A8070; font-weight:300; max-width:580px; margin-bottom:2.75rem;">
+          MESI delivers advanced engineering and industrial solutions to the mining, manufacturing, and infrastructure sectors across Southern Africa — from automation and mechanical services to logistics and turnkey project execution.
         </p>
 
-        <!-- CTAs -->
         <div class="anim-3" style="display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:4rem;">
-          <a href="#services" class="btn-gold">Explore Services</a>
+          <a href="#divisions" class="btn-gold">Our Divisions</a>
           <a href="#contact" class="btn-outline">Get in Touch</a>
         </div>
 
-        <!-- Tagline bullets -->
         <div class="anim-4" style="display:flex; flex-wrap:wrap; gap:2rem;">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <div class="dot-gold"></div>
-            <span style="font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:600;
-              letter-spacing:0.12em; text-transform:uppercase; color:#4A4540;">Design</span>
-          </div>
-          <div style="display:flex; align-items:center; gap:8px;">
-            <div class="dot-green"></div>
-            <span style="font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:600;
-              letter-spacing:0.12em; text-transform:uppercase; color:#4A4540;">Innovate</span>
-          </div>
-          <div style="display:flex; align-items:center; gap:8px;">
-            <div class="dot-gold"></div>
-            <span style="font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:600;
-              letter-spacing:0.12em; text-transform:uppercase; color:#4A4540;">Engineer</span>
-          </div>
-          <div style="display:flex; align-items:center; gap:8px;">
-            <div class="dot-green"></div>
-            <span style="font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:600;
-              letter-spacing:0.12em; text-transform:uppercase; color:#4A4540;">Deliver</span>
-          </div>
+          <div style="display:flex; align-items:center; gap:8px;"><div class="dot-gold"></div><span style="font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#4A4540;">Design</span></div>
+          <div style="display:flex; align-items:center; gap:8px;"><div class="dot-green"></div><span style="font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#4A4540;">Innovate</span></div>
+          <div style="display:flex; align-items:center; gap:8px;"><div class="dot-gold"></div><span style="font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#4A4540;">Engineer</span></div>
+          <div style="display:flex; align-items:center; gap:8px;"><div class="dot-green"></div><span style="font-family:'Rajdhani',sans-serif; font-size:0.8rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#4A4540;">Deliver</span></div>
         </div>
 
       </div>
 
-      <!-- Decorative large logo — desktop -->
       <div style="position:absolute; right:-80px; top:50%; transform:translateY(-50%);
         opacity:0.06; pointer-events:none;" class="hidden lg:block">
         <img src="brand_assets/MESI%20Logo.jpeg" alt="" aria-hidden="true"
@@ -550,219 +404,7 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       SERVICES
-  ═══════════════════════════════════════ -->
-  <section id="services" style="padding:7rem 0; background:#09090F; position:relative; overflow:hidden;">
-    <div style="position:absolute; top:-100px; right:0; width:400px; height:400px; border-radius:50%;
-      background:radial-gradient(circle, rgba(201,148,26,0.04) 0%, transparent 70%); pointer-events:none;"></div>
-
-    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
-
-      <!-- Header -->
-      <div style="margin-bottom:4rem; max-width:600px;">
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
-          <div style="width:36px; height:1px; background:#C9941A;"></div>
-          <span class="label">What We Do</span>
-        </div>
-        <h2 class="section-h2" style="color:#F2EDE0; margin-bottom:1rem;">
-          Our Core <span class="text-gold">Capabilities</span>
-        </h2>
-        <p style="color:#5A5550; font-size:1rem; line-height:1.75; font-weight:300;">
-          From concept to commissioning, MESI delivers comprehensive engineering solutions
-          across the full mechanical–electrical spectrum.
-        </p>
-      </div>
-
-      <!-- Grid -->
-      <div class="services-grid">
-
-        <!-- Electrical Design -->
-        <div class="service-card">
-          <div class="service-card-header">
-            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-              </svg>
-            </div>
-            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-              color:#F2EDE0; margin-bottom:0.625rem;">Electrical Design</h3>
-            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 7l5 5 5-5"/>
-            </svg>
-          </div>
-          <div class="service-card-body">
-            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-              Power distribution, control systems, and wiring schematics designed to precision —
-              from concept to construction-ready documentation.
-            </p>
-            <a href="#contact" class="learn-more learn-more-gold">
-              Learn more
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Mechanical Engineering -->
-        <div class="service-card">
-          <div class="service-card-header">
-            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/>
-              </svg>
-            </div>
-            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-              color:#F2EDE0; margin-bottom:0.625rem;">Mechanical Engineering</h3>
-            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 7l5 5 5-5"/>
-            </svg>
-          </div>
-          <div class="service-card-body">
-            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-              Structural and mechanical system design — equipment layouts, piping, HVAC, and
-              full mechanical specifications for complex facilities.
-            </p>
-            <a href="#contact" class="learn-more learn-more-green">
-              Learn more
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Systems Integration -->
-        <div class="service-card">
-          <div class="service-card-header">
-            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="7" height="7" rx="1.5"/>
-                <rect x="15" y="3" width="7" height="7" rx="1.5"/>
-                <rect x="2" y="14" width="7" height="7" rx="1.5"/>
-                <rect x="15" y="14" width="7" height="7" rx="1.5"/>
-                <path d="M9 6.5h6M9 17.5h6M5.5 10v4M18.5 10v4"/>
-              </svg>
-            </div>
-            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-              color:#F2EDE0; margin-bottom:0.625rem;">Systems Integration</h3>
-            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 7l5 5 5-5"/>
-            </svg>
-          </div>
-          <div class="service-card-body">
-            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-              Seamlessly connecting mechanical and electrical subsystems into one cohesive whole —
-              bridging disciplines through expert coordination and integration.
-            </p>
-            <a href="#contact" class="learn-more learn-more-gold">
-              Learn more
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- CAD / BIM -->
-        <div class="service-card">
-          <div class="service-card-header">
-            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3L2 8l10 5 10-5-10-5z"/>
-                <path d="M2 12l10 5 10-5"/>
-                <path d="M2 17l10 5 10-5"/>
-              </svg>
-            </div>
-            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-              color:#F2EDE0; margin-bottom:0.625rem;">CAD / BIM Design</h3>
-            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 7l5 5 5-5"/>
-            </svg>
-          </div>
-          <div class="service-card-body">
-            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-              High-fidelity 2D and 3D CAD drawings and BIM models that ensure accuracy,
-              eliminate clashes, and accelerate construction delivery.
-            </p>
-            <a href="#contact" class="learn-more learn-more-green">
-              Learn more
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project Management -->
-        <div class="service-card">
-          <div class="service-card-header">
-            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18"/>
-                <path d="M8 14h2M8 18h2M13 14h3M13 18h3"/>
-              </svg>
-            </div>
-            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-              color:#F2EDE0; margin-bottom:0.625rem;">Project Management</h3>
-            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 7l5 5 5-5"/>
-            </svg>
-          </div>
-          <div class="service-card-body">
-            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-              End-to-end project oversight from scope definition to final handover, keeping
-              complex multi-discipline projects on time and on budget.
-            </p>
-            <a href="#contact" class="learn-more learn-more-gold">
-              Learn more
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Commissioning -->
-        <div class="service-card">
-          <div class="service-card-header">
-            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 12l2 2 4-4"/>
-                <circle cx="12" cy="12" r="10"/>
-              </svg>
-            </div>
-            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em;
-              color:#F2EDE0; margin-bottom:0.625rem;">Commissioning &amp; Testing</h3>
-            <svg class="service-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 7l5 5 5-5"/>
-            </svg>
-          </div>
-          <div class="service-card-body">
-            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300;">
-              Rigorous site testing, verification, and commissioning ensuring every integrated
-              system performs to specification before client handover.
-            </p>
-            <a href="#contact" class="learn-more learn-more-green">
-              Learn more
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 6.5h8M7 3.5l3 3-3 3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       ABOUT + STATS
-  ═══════════════════════════════════════ -->
+  <!-- ═══ ABOUT + STATS ═══ -->
   <section id="about" style="padding:7rem 0; background:#070A0D; position:relative; overflow:hidden;" class="circuit-bg">
     <div class="divider-gold" style="position:absolute; top:0; left:0; right:0;"></div>
     <div style="position:absolute; bottom:-200px; right:-100px; width:600px; height:600px; border-radius:50%;
@@ -771,78 +413,54 @@
     <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
       <div class="about-grid">
 
-        <!-- Left -->
         <div>
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
             <div style="width:36px; height:1px; background:#C9941A;"></div>
             <span class="label">About MESI</span>
           </div>
           <h2 class="section-h2" style="color:#F2EDE0; margin-bottom:1.5rem;">
-            Precision Where<br><span class="text-gold">It Matters Most</span>
+            Bridging Engineering<br><span class="text-gold">Innovation &amp; Field Execution</span>
           </h2>
           <p style="color:#5A5550; font-size:1rem; line-height:1.8; font-weight:300; margin-bottom:1.125rem;">
-            MESI was built on a singular insight: mechanical and electrical systems should never be
-            designed in isolation. True integration demands deep expertise in both disciplines —
-            and the vision to make them operate as one.
+            MESI is a multidisciplinary engineering and industrial solutions company providing advanced services to the mining, industrial, manufacturing, automation, logistics, and infrastructure sectors throughout Southern Africa.
           </p>
           <p style="color:#5A5550; font-size:1rem; line-height:1.8; font-weight:300; margin-bottom:2.5rem;">
-            From industrial facilities to commercial developments, we bring cross-discipline
-            knowledge to every engagement — delivering designs that are precise, buildable,
-            and built to last.
+            We were established to bridge the gap between engineering innovation and practical field execution. Our experienced teams deliver professional, safe, and reliable solutions designed to increase productivity, reduce downtime, and ensure long-term sustainability for every client we serve.
           </p>
 
           <div style="display:flex; flex-direction:column; gap:0.875rem;">
             <div style="display:flex; align-items:center; gap:10px;">
               <div class="dot-gold"></div>
-              <span style="font-family:'Rajdhani',sans-serif; font-size:0.825rem; font-weight:600;
-                letter-spacing:0.1em; text-transform:uppercase; color:#8A8070;">
-                Industry-Certified Engineers
-              </span>
+              <span style="font-family:'Rajdhani',sans-serif; font-size:0.825rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#8A8070;">Six Integrated Service Divisions</span>
             </div>
             <div style="display:flex; align-items:center; gap:10px;">
               <div class="dot-green"></div>
-              <span style="font-family:'Rajdhani',sans-serif; font-size:0.825rem; font-weight:600;
-                letter-spacing:0.1em; text-transform:uppercase; color:#8A8070;">
-                Multi-Discipline Expertise
-              </span>
+              <span style="font-family:'Rajdhani',sans-serif; font-size:0.825rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#8A8070;">Mining &amp; Industrial Expertise</span>
             </div>
             <div style="display:flex; align-items:center; gap:10px;">
               <div class="dot-gold"></div>
-              <span style="font-family:'Rajdhani',sans-serif; font-size:0.825rem; font-weight:600;
-                letter-spacing:0.1em; text-transform:uppercase; color:#8A8070;">
-                End-to-End Project Delivery
-              </span>
+              <span style="font-family:'Rajdhani',sans-serif; font-size:0.825rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#8A8070;">End-to-End Project Delivery</span>
             </div>
           </div>
         </div>
 
-        <!-- Right: Stats -->
         <div class="about-stats-wrap" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem;">
-
           <div class="stat-card">
             <div class="display text-gold" style="font-weight:700; font-size:3.25rem; line-height:1; margin-bottom:0.375rem;">15+</div>
-            <div style="font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:600;
-              letter-spacing:0.14em; text-transform:uppercase; color:#4A4540;">Years of Experience</div>
+            <div style="font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#4A4540;">Years of Experience</div>
           </div>
-
           <div class="stat-card">
             <div class="display text-gold" style="font-weight:700; font-size:3.25rem; line-height:1; margin-bottom:0.375rem;">200+</div>
-            <div style="font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:600;
-              letter-spacing:0.14em; text-transform:uppercase; color:#4A4540;">Projects Delivered</div>
+            <div style="font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#4A4540;">Projects Delivered</div>
           </div>
-
           <div class="stat-card">
-            <div class="display text-green" style="font-weight:700; font-size:3.25rem; line-height:1; margin-bottom:0.375rem;">98%</div>
-            <div style="font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:600;
-              letter-spacing:0.14em; text-transform:uppercase; color:#4A4540;">On-Time Delivery</div>
+            <div class="display text-green" style="font-weight:700; font-size:3.25rem; line-height:1; margin-bottom:0.375rem;">6</div>
+            <div style="font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#4A4540;">Specialist Divisions</div>
           </div>
-
           <div class="stat-card">
-            <div class="display text-green" style="font-weight:700; font-size:3.25rem; line-height:1; margin-bottom:0.375rem;">50+</div>
-            <div style="font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:600;
-              letter-spacing:0.14em; text-transform:uppercase; color:#4A4540;">Trusted Clients</div>
+            <div class="display text-green" style="font-weight:700; font-size:3.25rem; line-height:1; margin-bottom:0.375rem;">24/7</div>
+            <div style="font-family:'Rajdhani',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#4A4540;">Support Available</div>
           </div>
-
         </div>
 
       </div>
@@ -851,57 +469,237 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       4 PILLARS
-  ═══════════════════════════════════════ -->
-  <section id="approach" style="padding:7rem 0; background:#09090F; position:relative; overflow:hidden;">
+  <!-- ═══ DIVISIONS ═══ -->
+  <section id="divisions" style="padding:7rem 0; background:#09090F; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-100px; right:0; width:500px; height:500px; border-radius:50%;
+      background:radial-gradient(circle, rgba(201,148,26,0.04) 0%, transparent 70%); pointer-events:none;"></div>
+
+    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
+      <div style="margin-bottom:4rem; max-width:660px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:36px; height:1px; background:#C9941A;"></div>
+          <span class="label">Our Divisions</span>
+        </div>
+        <h2 class="section-h2" style="color:#F2EDE0; margin-bottom:1rem;">
+          Six Specialised<br><span class="text-gold">Engineering Divisions</span>
+        </h2>
+        <p style="color:#5A5550; font-size:1rem; line-height:1.75; font-weight:300;">
+          MESI combines six specialist divisions into one integrated company — offering clients a single trusted partner capable of handling projects from concept through commissioning and beyond.
+        </p>
+      </div>
+
+      <div class="divisions-grid">
+
+        <!-- 01 Automation & Electrical -->
+        <div class="division-card" data-num="01">
+          <div class="division-card-header">
+            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="6" height="6" rx="1"/>
+                <path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em; color:#F2EDE0; margin-bottom:0.625rem;">Automation &amp; Electrical</h3>
+            <svg class="division-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg>
+          </div>
+          <div class="division-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300; margin-bottom:1rem;">
+              Complete automation, instrumentation, and electrical engineering solutions for mining, manufacturing, and industrial facilities. We design intelligent systems that optimise production, reduce downtime, and enhance plant safety.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.375rem; margin-bottom:1rem;">
+              <span class="chip">PLC Programming</span>
+              <span class="chip">SCADA Systems</span>
+              <span class="chip">MCC Panels</span>
+              <span class="chip">Electrical Installations</span>
+              <span class="chip">IoT Integration</span>
+              <span class="chip">Solar &amp; UPS</span>
+            </div>
+            <a href="#contact" class="learn-more learn-more-gold">Enquire <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h8M7 3.5l3 3-3 3"/></svg></a>
+          </div>
+        </div>
+
+        <!-- 02 Mechanical & Mining -->
+        <div class="division-card green" data-num="02">
+          <div class="division-card-header">
+            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em; color:#F2EDE0; margin-bottom:0.625rem;">Mechanical &amp; Mining</h3>
+            <svg class="division-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg>
+          </div>
+          <div class="division-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300; margin-bottom:1rem;">
+              Professional mining maintenance, shutdown support, and mechanical engineering for the heavy industrial sector. Our specialist teams handle mills, crushers, conveyors, alignments, fabrication, and full turnkey project execution.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.375rem; margin-bottom:1rem;">
+              <span class="chip chip-green">Mill Maintenance</span>
+              <span class="chip chip-green">Crusher Services</span>
+              <span class="chip chip-green">Conveyor Systems</span>
+              <span class="chip chip-green">Laser Alignments</span>
+              <span class="chip chip-green">Fabrication</span>
+              <span class="chip chip-green">Turnkey Projects</span>
+            </div>
+            <a href="#contact" class="learn-more learn-more-green">Enquire <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h8M7 3.5l3 3-3 3"/></svg></a>
+          </div>
+        </div>
+
+        <!-- 03 Payload & Weighing -->
+        <div class="division-card" data-num="03">
+          <div class="division-card-header">
+            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a3 3 0 100 6 3 3 0 000-6z"/>
+                <path d="M6.5 8H4a1 1 0 00-1 1v10a1 1 0 001 1h16a1 1 0 001-1V9a1 1 0 00-1-1h-2.5"/>
+                <path d="M8 12h8M8 16h5"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em; color:#F2EDE0; margin-bottom:0.625rem;">Payload &amp; Weighing</h3>
+            <svg class="division-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg>
+          </div>
+          <div class="division-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300; margin-bottom:1rem;">
+              Intelligent payload management systems, truck scales, and volumetric scanning for surface and underground mining. Our systems maximise production efficiency, improve loading accuracy, reduce equipment wear, and deliver real-time data.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.375rem; margin-bottom:1rem;">
+              <span class="chip">Payload Monitoring</span>
+              <span class="chip">Truck Scales</span>
+              <span class="chip">Volumetric Scanning</span>
+              <span class="chip">Fleet Monitoring</span>
+              <span class="chip">Data Analytics</span>
+              <span class="chip">Calibration</span>
+            </div>
+            <a href="#contact" class="learn-more learn-more-gold">Enquire <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h8M7 3.5l3 3-3 3"/></svg></a>
+          </div>
+        </div>
+
+        <!-- 04 Logistics & Transport -->
+        <div class="division-card green" data-num="04">
+          <div class="division-card-header">
+            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="1"/>
+                <path d="M16 8h4l3 5v3h-7V8z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em; color:#F2EDE0; margin-bottom:0.625rem;">Logistics &amp; Transport</h3>
+            <svg class="division-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg>
+          </div>
+          <div class="division-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300; margin-bottom:1rem;">
+              Reliable road freight, mining logistics, and fleet management solutions for mining, industrial, and commercial clients. Our modern fleet delivers safe, on-time transport including heavy equipment moves and cross-border logistics.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.375rem; margin-bottom:1rem;">
+              <span class="chip chip-green">Road Freight</span>
+              <span class="chip chip-green">Mining Logistics</span>
+              <span class="chip chip-green">Heavy Transport</span>
+              <span class="chip chip-green">Cross-Border</span>
+              <span class="chip chip-green">Fleet Management</span>
+              <span class="chip chip-green">24/7 Tracking</span>
+            </div>
+            <a href="#contact" class="learn-more learn-more-green">Enquire <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h8M7 3.5l3 3-3 3"/></svg></a>
+          </div>
+        </div>
+
+        <!-- 05 Industrial Supplies -->
+        <div class="division-card" data-num="05">
+          <div class="division-card-header">
+            <div class="icon-bg-gold" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em; color:#F2EDE0; margin-bottom:0.625rem;">Industrial Supplies</h3>
+            <svg class="division-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg>
+          </div>
+          <div class="division-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300; margin-bottom:1rem;">
+              Comprehensive supply of high-quality electrical, mechanical, mining, safety, and automation equipment. We source and deliver components to keep your operations running without unnecessary delay or downtime.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.375rem; margin-bottom:1rem;">
+              <span class="chip">Electrical Components</span>
+              <span class="chip">Mechanical Parts</span>
+              <span class="chip">Mining Consumables</span>
+              <span class="chip">Safety &amp; PPE</span>
+              <span class="chip">Automation Components</span>
+              <span class="chip">Bearings &amp; Rollers</span>
+            </div>
+            <a href="#contact" class="learn-more learn-more-gold">Enquire <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h8M7 3.5l3 3-3 3"/></svg></a>
+          </div>
+        </div>
+
+        <!-- 06 Projects & Engineering -->
+        <div class="division-card green" data-num="06">
+          <div class="division-card-header">
+            <div class="icon-bg-green" style="margin-bottom:1.5rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="2" width="6" height="4" rx="1"/>
+                <path d="M9 2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-4"/>
+                <path d="M9 12h6M9 16h4"/>
+              </svg>
+            </div>
+            <h3 class="display" style="font-weight:700; font-size:1.2rem; letter-spacing:0.04em; color:#F2EDE0; margin-bottom:0.625rem;">Projects &amp; Engineering</h3>
+            <svg class="division-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg>
+          </div>
+          <div class="division-card-body">
+            <p style="color:#4A4540; font-size:0.9rem; line-height:1.75; font-weight:300; margin-bottom:1rem;">
+              Turnkey project management and engineering services from concept development through installation, commissioning, and operational support. We manage complex multi-discipline projects with professional execution and a safety-first approach.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.375rem; margin-bottom:1rem;">
+              <span class="chip chip-green">Project Management</span>
+              <span class="chip chip-green">Engineering Design</span>
+              <span class="chip chip-green">Feasibility Studies</span>
+              <span class="chip chip-green">Construction Management</span>
+              <span class="chip chip-green">Shutdown Planning</span>
+              <span class="chip chip-green">Commissioning</span>
+            </div>
+            <a href="#contact" class="learn-more learn-more-green">Enquire <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h8M7 3.5l3 3-3 3"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ HOW WE DELIVER (4 Pillars) ═══ -->
+  <section id="approach" style="padding:7rem 0; background:#070A0D; position:relative; overflow:hidden;" class="circuit-bg">
     <div style="position:absolute; top:-50px; left:50%; transform:translateX(-50%); width:700px; height:300px; border-radius:50%;
       background:radial-gradient(ellipse at center, rgba(201,148,26,0.04) 0%, transparent 70%); pointer-events:none;"></div>
 
     <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
-
-      <!-- Header -->
       <div style="text-align:center; margin-bottom:4rem;">
         <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:1rem;">
           <div style="width:36px; height:1px; background:#C9941A;"></div>
           <span class="label">Our Approach</span>
           <div style="width:36px; height:1px; background:#C9941A;"></div>
         </div>
-        <h2 class="section-h2" style="color:#F2EDE0;">
-          How We <span class="text-gold">Deliver</span>
-        </h2>
+        <h2 class="section-h2" style="color:#F2EDE0;">How We <span class="text-gold">Deliver</span></h2>
       </div>
 
-      <!-- Pillars grid -->
-      <div class="pillars-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.25rem;">
+      <div class="pillars-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem;">
 
         <div class="pillar-card">
           <div class="icon-circle-gold">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9.5 14.5l2.5 2.5 6-7"/>
-              <circle cx="14" cy="14" r="11"/>
+              <path d="M9.5 14.5l2.5 2.5 6-7"/><circle cx="14" cy="14" r="11"/>
             </svg>
           </div>
-          <div class="display pillar-word text-gold" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">DESIGN</div>
-          <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">
-            Every project begins with thorough design — understanding requirements, constraints,
-            and goals before a single drawing is made.
-          </p>
+          <div class="display pillar-word text-gold" style="font-weight:700; letter-spacing:0.12em; margin-bottom:0.875rem;">DESIGN</div>
+          <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">Every project begins with thorough design — understanding requirements, constraints, and goals before a single drawing is made.</p>
         </div>
 
         <div class="pillar-card">
           <div class="icon-circle-green">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="14" cy="11" r="5"/>
-              <path d="M11 16v3a2 2 0 004 0v-3"/>
-              <path d="M14 6V4"/>
+              <circle cx="14" cy="11" r="5"/><path d="M11 16v3a2 2 0 004 0v-3"/><path d="M14 6V4"/>
             </svg>
           </div>
-          <div class="display pillar-word text-green" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">INNOVATE</div>
-          <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">
-            We challenge convention, applying smart solutions and emerging technologies
-            to deliver outcomes that exceed expectations.
-          </p>
+          <div class="display pillar-word text-green" style="font-weight:700; letter-spacing:0.12em; margin-bottom:0.875rem;">INNOVATE</div>
+          <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">We challenge convention, applying advanced technologies and smart solutions to deliver outcomes that exceed expectations.</p>
         </div>
 
         <div class="pillar-card">
@@ -911,11 +709,8 @@
               <path d="M14 3v3M14 22v3M3 14h3M22 14h3M6.22 6.22l2.12 2.12M19.66 19.66l2.12 2.12M19.66 8.34l2.12-2.12M6.22 21.78l2.12-2.12"/>
             </svg>
           </div>
-          <div class="display pillar-word text-gold" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">ENGINEER</div>
-          <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">
-            Technical excellence in execution — detailed engineering, precise calculations,
-            and quality documentation at every stage.
-          </p>
+          <div class="display pillar-word text-gold" style="font-weight:700; letter-spacing:0.12em; margin-bottom:0.875rem;">ENGINEER</div>
+          <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">Technical excellence in execution — precise calculations, detailed engineering, and quality documentation at every stage.</p>
         </div>
 
         <div class="pillar-card">
@@ -924,11 +719,8 @@
               <path d="M23 4L12 15M23 4l-7 19-4-9-9-4 20-6z"/>
             </svg>
           </div>
-          <div class="display pillar-word text-green" style="font-weight:700; font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.875rem;">DELIVER</div>
-          <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">
-            On schedule, on budget, to specification. We see every project through to final
-            handover — no exceptions, no shortcuts.
-          </p>
+          <div class="display pillar-word text-green" style="font-weight:700; letter-spacing:0.12em; margin-bottom:0.875rem;">DELIVER</div>
+          <p style="color:#4A4540; font-size:0.875rem; line-height:1.75; font-weight:300;">On schedule, on budget, to specification. We see every project through to final handover — no exceptions, no shortcuts.</p>
         </div>
 
       </div>
@@ -936,43 +728,296 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       INDUSTRIES
-  ═══════════════════════════════════════ -->
+  <!-- ═══ VISION & MISSION ═══ -->
+  <section style="padding:7rem 0; background:#09090F; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-100px; left:-100px; width:500px; height:500px; border-radius:50%;
+      background:radial-gradient(circle, rgba(201,148,26,0.04) 0%, transparent 70%); pointer-events:none;"></div>
+    <div class="divider-gold" style="position:absolute; top:0; left:0; right:0;"></div>
+
+    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
+      <div style="text-align:center; margin-bottom:3.5rem;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:36px; height:1px; background:#C9941A;"></div>
+          <span class="label">Vision &amp; Mission</span>
+          <div style="width:36px; height:1px; background:#C9941A;"></div>
+        </div>
+        <h2 class="section-h2" style="color:#F2EDE0;">What Drives <span class="text-gold">MESI</span></h2>
+      </div>
+
+      <div class="vm-grid">
+        <div class="vm-card vm-card-gold">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:1.75rem;">
+            <div style="width:52px; height:52px; border-radius:50%; background:rgba(201,148,26,0.12); border:1px solid rgba(201,148,26,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+              </svg>
+            </div>
+            <div>
+              <span class="label" style="display:block; margin-bottom:2px;">Our Vision</span>
+              <div class="display text-gold" style="font-weight:700; font-size:1.3rem; letter-spacing:0.05em;">Africa's Leading Partner</div>
+            </div>
+          </div>
+          <p style="color:#6B6560; font-size:1rem; line-height:1.8; font-weight:300; font-style:italic; border-left:2px solid rgba(201,148,26,0.3); padding-left:1.25rem;">
+            "To become Africa's leading integrated engineering and industrial solutions company through innovation, reliability, operational excellence, and customer-focused service delivery."
+          </p>
+        </div>
+
+        <div class="vm-card vm-card-green">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:1.75rem;">
+            <div style="width:52px; height:52px; border-radius:50%; background:rgba(34,168,69,0.12); border:1px solid rgba(34,168,69,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 4L12 15M22 4l-7 19-4-9-9-4 20-6z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="label" style="display:block; margin-bottom:2px; color:#22A845;">Our Mission</span>
+              <div class="display text-green" style="font-weight:700; font-size:1.3rem; letter-spacing:0.05em;">World-Class Solutions</div>
+            </div>
+          </div>
+          <p style="color:#6B6560; font-size:1rem; line-height:1.8; font-weight:300; font-style:italic; border-left:2px solid rgba(34,168,69,0.3); padding-left:1.25rem;">
+            "To provide world-class engineering, automation, mining, logistics, and industrial solutions that improve safety, productivity, efficiency, and sustainability for every client we serve."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CORE VALUES ═══ -->
+  <section style="padding:7rem 0; background:#070A0D; position:relative; overflow:hidden;" class="circuit-bg">
+    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
+
+      <div style="text-align:center; margin-bottom:3.5rem;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:1rem;">
+          <div style="width:36px; height:1px; background:#C9941A;"></div>
+          <span class="label">What We Stand For</span>
+          <div style="width:36px; height:1px; background:#C9941A;"></div>
+        </div>
+        <h2 class="section-h2" style="color:#F2EDE0;">Our Core <span class="text-gold">Values</span></h2>
+      </div>
+
+      <div class="values-grid">
+
+        <div class="value-card">
+          <div style="color:#C9941A; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#F2EDE0;">Integrity</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#22A845; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="5"/><path d="M9 17v3a2 2 0 004 0v-3M12 6V4"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#F2EDE0;">Innovation</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#C9941A; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#F2EDE0;">Reliability</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#22A845; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#F2EDE0;">Commitment</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#C9941A; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#F2EDE0;">Safety</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#22A845; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:#F2EDE0; line-height:1.2;">Quality Workmanship</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#C9941A; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#F2EDE0;">Accountability</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#22A845; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M17 11l2 2 4-4"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:#F2EDE0; line-height:1.2;">Customer Excellence</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#C9941A; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:#F2EDE0; line-height:1.2;">Sustainable Engineering</div>
+        </div>
+
+        <div class="value-card">
+          <div style="color:#22A845; margin-bottom:0.625rem; display:flex; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="display" style="font-weight:700; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:#F2EDE0; line-height:1.2;">Operational Efficiency</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ WHY CHOOSE MESI ═══ -->
+  <section id="why" style="padding:7rem 0; background:#09090F; position:relative; overflow:hidden;">
+    <div class="divider-gold" style="position:absolute; top:0; left:0; right:0;"></div>
+    <div style="position:absolute; bottom:-150px; right:-100px; width:500px; height:500px; border-radius:50%;
+      background:radial-gradient(circle, rgba(201,148,26,0.04) 0%, transparent 70%); pointer-events:none;"></div>
+
+    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
+      <div class="why-layout">
+
+        <div>
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+            <div style="width:36px; height:1px; background:#C9941A;"></div>
+            <span class="label">Why MESI</span>
+          </div>
+          <h2 class="section-h2" style="color:#F2EDE0; margin-bottom:1.5rem;">
+            Your Trusted<br><span class="text-gold">Engineering Partner</span>
+          </h2>
+          <p style="color:#5A5550; font-size:0.9rem; line-height:1.8; font-weight:300; margin-bottom:2rem;">
+            With six integrated divisions, deep mining sector expertise, and a commitment to safety-first delivery, MESI is the single partner capable of handling every engineering challenge your operation faces.
+          </p>
+          <a href="#contact" class="btn-gold">Get a Quote</a>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#C9941A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Integrated Engineering Solutions</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#22A845" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Skilled &amp; Experienced Teams</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#C9941A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Fast Response Times</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#22A845" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Professional Project Execution</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#C9941A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">24/7 Support Services</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#22A845" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Turnkey Solutions</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#C9941A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Advanced Technologies</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#22A845" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Mining Industry Expertise</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#C9941A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Scalable Operational Support</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#22A845" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Safety-Focused Operations</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#C9941A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Customer-Centric Service</span>
+          </div>
+          <div class="feature-item">
+            <svg class="icon-sm" viewBox="0 0 20 20" fill="none" stroke="#22A845" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l2 2 4-4"/><circle cx="10" cy="10" r="8"/></svg>
+            <span style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.875rem; letter-spacing:0.04em; color:#A8A090;">Reliable Service Delivery</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ INDUSTRIES ═══ -->
   <section style="padding:4.5rem 0; background:#070A0D; border-top:1px solid rgba(201,148,26,0.07);">
     <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
       <div style="text-align:center; margin-bottom:2rem;">
         <span class="label">Industries We Serve</span>
       </div>
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem;">
+        <span class="pill">Mining</span>
+        <span class="pill">Manufacturing</span>
+        <span class="pill">Processing Plants</span>
+        <span class="pill">Energy Sector</span>
+        <span class="pill">Warehousing</span>
         <span class="pill">Industrial Facilities</span>
-        <span class="pill">Commercial Buildings</span>
-        <span class="pill">Healthcare</span>
-        <span class="pill">Data Centres</span>
-        <span class="pill">Education</span>
+        <span class="pill">Logistics</span>
+        <span class="pill">Agricultural</span>
         <span class="pill">Infrastructure</span>
-        <span class="pill">Mining &amp; Resources</span>
         <span class="pill">Government</span>
-        <span class="pill">Defence</span>
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       CONTACT CTA
-  ═══════════════════════════════════════ -->
-  <section id="contact" style="padding:7.5rem 0; background:#09090F; position:relative; overflow:hidden;">
-    <!-- Orbs -->
-    <div style="position:absolute; top:-200px; left:-100px; width:600px; height:600px; border-radius:50%;
-      background:radial-gradient(circle, rgba(201,148,26,0.06) 0%, transparent 70%); pointer-events:none;"></div>
-    <div style="position:absolute; bottom:-200px; right:-100px; width:500px; height:500px; border-radius:50%;
-      background:radial-gradient(circle, rgba(26,122,46,0.05) 0%, transparent 70%); pointer-events:none;"></div>
+  <!-- ═══ HSE COMMITMENT ═══ -->
+  <section style="padding:5rem 0; background:#09090F; overflow:hidden; position:relative;">
+    <div class="divider-gold" style="position:absolute; top:0; left:0; right:0;"></div>
+    <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
+      <div class="hse-flex" style="display:flex; flex-wrap:wrap; align-items:center; gap:4rem;">
 
-    <!-- Decorative gold lines -->
-    <div style="position:absolute; top:0; left:0; right:0;">
-      <div class="divider-gold"></div>
+        <div style="flex-shrink:0; text-align:center;">
+          <div style="width:80px; height:80px; border-radius:50%; background:rgba(201,148,26,0.1); border:1px solid rgba(201,148,26,0.25); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 3L5 8v10c0 8.5 13 15 13 15s13-6.5 13-15V8L18 3z"/>
+              <path d="M13 18l3.5 3.5 7-7"/>
+            </svg>
+          </div>
+          <span class="label" style="display:block;">HSE</span>
+        </div>
+
+        <div style="flex:1; min-width:280px;">
+          <h3 class="display" style="font-weight:700; font-size:1.5rem; letter-spacing:0.04em; color:#F2EDE0; margin-bottom:0.75rem;">
+            Health, Safety &amp; Environment
+          </h3>
+          <p style="color:#5A5550; font-size:0.9rem; line-height:1.75; font-weight:300; margin-bottom:1.25rem;">
+            MESI is committed to maintaining the highest standards of health, safety, and environmental responsibility. Safety is a core business value — not a compliance checkbox.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.625rem;">
+            <span class="chip" style="color:#C9941A; border-color:rgba(201,148,26,0.25);">Safe Working Environments</span>
+            <span class="chip" style="color:#C9941A; border-color:rgba(201,148,26,0.25);">Risk Assessments</span>
+            <span class="chip" style="color:#C9941A; border-color:rgba(201,148,26,0.25);">Industry Compliance</span>
+            <span class="chip" style="color:#C9941A; border-color:rgba(201,148,26,0.25);">Safety Training</span>
+            <span class="chip" style="color:#C9941A; border-color:rgba(201,148,26,0.25);">Environmental Responsibility</span>
+            <span class="chip" style="color:#C9941A; border-color:rgba(201,148,26,0.25);">Quality Assurance</span>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
+
+
+  <!-- ═══ CONTACT CTA ═══ -->
+  <section id="contact" style="padding:7.5rem 0; background:#070A0D; position:relative; overflow:hidden;" class="circuit-bg">
+    <div class="orb" style="top:-200px; left:-100px; width:600px; height:600px; background:radial-gradient(circle, rgba(201,148,26,0.06) 0%, transparent 70%);"></div>
+    <div class="orb" style="bottom:-200px; right:-100px; width:500px; height:500px; background:radial-gradient(circle, rgba(26,122,46,0.05) 0%, transparent 70%);"></div>
+    <div class="divider-gold" style="position:absolute; top:0; left:0; right:0;"></div>
 
     <div style="max-width:860px; margin:0 auto; padding:0 1.5rem; text-align:center; position:relative; z-index:2;">
 
@@ -982,119 +1027,86 @@
         <div style="width:36px; height:1px; background:#C9941A;"></div>
       </div>
 
-      <h2 style="font-family:'Rajdhani',sans-serif; font-weight:700;
-        font-size:clamp(2.25rem,5.5vw,4rem); line-height:1.04; letter-spacing:-0.025em;
-        color:#F2EDE0; margin-bottom:1.5rem;">
+      <h2 style="font-family:'Rajdhani',sans-serif; font-weight:700; font-size:clamp(2.25rem,5.5vw,4rem); line-height:1.04; letter-spacing:-0.025em; color:#F2EDE0; margin-bottom:1.5rem;">
         Ready to Engineer<br><span class="text-gold">Your Next Project?</span>
       </h2>
 
-      <p style="color:#5A5550; font-size:1.125rem; line-height:1.75; font-weight:300;
-        max-width:520px; margin:0 auto 3rem;">
-        Whether you're at concept stage or need specialist expertise mid-project,
-        our team is ready to help.
+      <p style="color:#5A5550; font-size:1.125rem; line-height:1.75; font-weight:300; max-width:520px; margin:0 auto 3rem;">
+        Whether you need automation, mechanical services, payload systems, logistics, or a full turnkey solution — MESI has the expertise to deliver.
       </p>
 
       <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:1rem; margin-bottom:3.5rem;">
-        <a href="mailto:info@mesi.com.au" class="btn-gold" style="min-width:200px;">Email Us</a>
-        <a href="tel:+61400000000" class="btn-outline" style="min-width:200px;">Call Us</a>
+        <a href="mailto:info@mesi.co.za" class="btn-gold" style="min-width:200px;">Email Us</a>
+        <a href="tel:+27100000000" class="btn-outline" style="min-width:200px;">Call Us</a>
       </div>
 
-      <!-- Contact detail strip -->
       <div class="contact-strip">
-
         <div class="contact-item">
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3.5" width="13" height="10" rx="1.5"/>
-            <path d="M2 6l6.5 4L15 6"/>
-          </svg>
-          info@mesi.com.au
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3.5" width="13" height="10" rx="1.5"/><path d="M2 6l6.5 4L15 6"/></svg>
+          info@mesi.co.za
         </div>
-
         <div class="contact-item">
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.5 10.8l-2.1-.24a1.5 1.5 0 00-1.23.44l-1.53 1.53a11.25 11.25 0 01-4.9-4.9l1.54-1.54a1.5 1.5 0 00.43-1.23L6.47 2.77A1.5 1.5 0 005 1.5H3a1.5 1.5 0 00-1.5 1.6A14 14 0 0015 16.75a1.5 1.5 0 001.6-1.5v-3a1.5 1.5 0 00-2.1-1.45z"/>
-          </svg>
-          +61 (0)4 000 0000
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10.8l-2.1-.24a1.5 1.5 0 00-1.23.44l-1.53 1.53a11.25 11.25 0 01-4.9-4.9l1.54-1.54a1.5 1.5 0 00.43-1.23L6.47 2.77A1.5 1.5 0 005 1.5H3a1.5 1.5 0 00-1.5 1.6A14 14 0 0015 16.75a1.5 1.5 0 001.6-1.5v-3a1.5 1.5 0 00-2.1-1.45z"/></svg>
+          +27 (0)10 000 0000
         </div>
-
         <div class="contact-item">
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8.5 1.5C6.15 1.5 4.25 3.4 4.25 5.75c0 4.25 4.25 9.75 4.25 9.75S12.75 10 12.75 5.75c0-2.35-1.9-4.25-4.25-4.25z"/>
-            <circle cx="8.5" cy="5.75" r="1.5"/>
-          </svg>
-          Brisbane, QLD, Australia
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5C6.15 1.5 4.25 3.4 4.25 5.75c0 4.25 4.25 9.75 4.25 9.75S12.75 10 12.75 5.75c0-2.35-1.9-4.25-4.25-4.25z"/><circle cx="8.5" cy="5.75" r="1.5"/></svg>
+          Southern Africa
         </div>
-
       </div>
+
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════ -->
+  <!-- ═══ FOOTER ═══ -->
   <footer style="background:#040608; border-top:1px solid rgba(201,148,26,0.08); padding:3.5rem 0 2rem;">
     <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
 
       <div class="footer-grid">
 
-        <!-- Brand -->
         <div class="footer-col">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:1.25rem;">
-            <div style="width:38px; height:38px; border-radius:5px; overflow:hidden; flex-shrink:0;
-              box-shadow:0 2px 8px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,148,26,0.12);">
+            <div style="width:38px; height:38px; border-radius:5px; overflow:hidden; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,148,26,0.12);">
               <img src="brand_assets/MESI%20Logo.jpeg" alt="MESI" style="width:100%; height:100%; object-fit:cover;">
             </div>
             <div>
-              <div style="font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1.2rem;
-                letter-spacing:0.1em; background:linear-gradient(135deg,#C9941A,#E8B030);
-                -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">MESI</div>
-              <div style="font-size:0.55rem; letter-spacing:0.12em; color:#2E2A26; text-transform:uppercase;">
-                Mechanical Electrical Systems Integration
-              </div>
+              <div style="font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1.2rem; letter-spacing:0.1em; background:linear-gradient(135deg,#C9941A,#E8B030); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">MESI</div>
+              <div style="font-size:0.55rem; letter-spacing:0.12em; color:#2E2A26; text-transform:uppercase;">Integrated Engineering &amp; Industrial Solutions</div>
             </div>
           </div>
           <p style="color:#2E2A26; font-size:0.875rem; line-height:1.75; max-width:340px; font-weight:300;">
-            Delivering integrated mechanical and electrical engineering solutions with precision,
-            innovation, and an unwavering commitment to quality.
+            Multidisciplinary engineering and industrial solutions for mining, automation, mechanical, logistics, and infrastructure sectors throughout Southern Africa.
           </p>
         </div>
 
-        <!-- Services -->
         <div class="footer-col">
-          <div style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.7rem;
-            letter-spacing:0.16em; text-transform:uppercase; color:#C9941A; margin-bottom:1.25rem;">
-            Services
-          </div>
+          <div style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:#C9941A; margin-bottom:1.25rem;">Divisions</div>
           <div style="display:flex; flex-direction:column; gap:0.75rem;">
-            <a href="#services" class="footer-link">Electrical Design</a>
-            <a href="#services" class="footer-link">Mechanical Engineering</a>
-            <a href="#services" class="footer-link">Systems Integration</a>
-            <a href="#services" class="footer-link">CAD / BIM Design</a>
-            <a href="#services" class="footer-link">Project Management</a>
+            <a href="#divisions" class="footer-link">Automation &amp; Electrical</a>
+            <a href="#divisions" class="footer-link">Mechanical &amp; Mining</a>
+            <a href="#divisions" class="footer-link">Payload &amp; Weighing</a>
+            <a href="#divisions" class="footer-link">Logistics &amp; Transport</a>
+            <a href="#divisions" class="footer-link">Industrial Supplies</a>
+            <a href="#divisions" class="footer-link">Projects &amp; Engineering</a>
           </div>
         </div>
 
-        <!-- Company -->
         <div class="footer-col">
-          <div style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.7rem;
-            letter-spacing:0.16em; text-transform:uppercase; color:#C9941A; margin-bottom:1.25rem;">
-            Company
-          </div>
+          <div style="font-family:'Rajdhani',sans-serif; font-weight:600; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:#C9941A; margin-bottom:1.25rem;">Company</div>
           <div style="display:flex; flex-direction:column; gap:0.75rem;">
             <a href="#about" class="footer-link">About MESI</a>
             <a href="#approach" class="footer-link">Our Approach</a>
-            <a href="#contact" class="footer-link">Contact</a>
+            <a href="#why" class="footer-link">Why MESI</a>
+            <a href="#contact" class="footer-link">Contact Us</a>
             <a href="#contact" class="footer-link">Get a Quote</a>
           </div>
         </div>
 
       </div>
 
-      <!-- Bottom bar -->
-      <div style="border-top:1px solid rgba(255,255,255,0.04); padding-top:1.5rem;
-        display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
-        <p style="color:#222018; font-size:0.8rem;">© 2025 MESI. All rights reserved.</p>
+      <div style="border-top:1px solid rgba(255,255,255,0.04); padding-top:1.5rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
+        <p style="color:#222018; font-size:0.8rem;">© 2025 MESI. All rights reserved. Serving Southern Africa.</p>
         <div style="display:flex; gap:1.5rem;">
           <a href="#" class="footer-link" style="font-size:0.8rem;">Privacy Policy</a>
           <a href="#" class="footer-link" style="font-size:0.8rem;">Terms of Use</a>
@@ -1106,7 +1118,6 @@
 
 
   <script>
-    /* Mobile menu */
     function toggleMobileMenu() {
       const m = document.getElementById('mobile-menu');
       m.style.display = m.style.display === 'none' ? 'block' : 'none';
@@ -1115,7 +1126,18 @@
       document.getElementById('mobile-menu').style.display = 'none';
     }
 
-    /* Smooth anchor scroll */
+    /* Division card accordion (mobile only) */
+    document.querySelectorAll('.division-card').forEach(card => {
+      card.addEventListener('click', function() {
+        if (window.innerWidth <= 767) {
+          const wasOpen = this.classList.contains('open');
+          document.querySelectorAll('.division-card').forEach(c => c.classList.remove('open'));
+          if (!wasOpen) this.classList.add('open');
+        }
+      });
+    });
+
+    /* Smooth scroll */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -1127,25 +1149,9 @@
       });
     });
 
-    /* Service card accordion (mobile only) */
-    document.querySelectorAll('.service-card').forEach(card => {
-      card.addEventListener('click', function() {
-        if (window.innerWidth <= 767) {
-          const wasOpen = this.classList.contains('open');
-          document.querySelectorAll('.service-card').forEach(c => c.classList.remove('open'));
-          if (!wasOpen) this.classList.add('open');
-        }
-      });
-    });
-
     /* Nav shadow on scroll */
     window.addEventListener('scroll', () => {
-      const nav = document.getElementById('nav');
-      if (window.scrollY > 30) {
-        nav.style.boxShadow = '0 4px 32px rgba(0,0,0,0.5)';
-      } else {
-        nav.style.boxShadow = 'none';
-      }
+      document.getElementById('nav').style.boxShadow = window.scrollY > 30 ? '0 4px 32px rgba(0,0,0,0.5)' : 'none';
     });
   </script>
 
