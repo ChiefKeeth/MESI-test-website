@@ -25,15 +25,43 @@
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
 
 ## Output Defaults
-- Single `index.html` file, all styles inline, unless user says otherwise
+- The site is now **multi-page**: `index.html` (Home), `about.html`, `divisions.html`, `contact.html`
+- Shared styles live in `css/style.css` — all brand CSS variables are defined there. Do not hardcode colours.
+- Shared nav and footer are injected by `js/components.js` via `initPage('pagename')`. Add new pages there too.
 - Tailwind CSS via CDN: `<script src="https://cdn.tailwindcss.com"></script>`
-- Placeholder images: `https://placehold.co/WIDTHxHEIGHT`
 - Mobile-first responsive
 
 ## Brand Assets
 - Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
 - If assets exist there, use them. Do not use placeholders where real assets are available.
 - If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
+
+### Current Brand Asset Map
+| File | Use |
+|---|---|
+| `brand_assets/Images/MESI Cropped logo.png` | **Primary logo** — badge + MESI letters, black bg. Use in nav and footer. |
+| `brand_assets/Images/MESI Logo.png` | Full logo with subtitle. Use in large-format contexts. |
+| `brand_assets/Images/MESI Name logo.png` | Name-only wordmark. |
+| `brand_assets/Images/Mesi symbol.png` | Badge/icon only. Use as favicon or icon mark. |
+| `brand_assets/Images/Site Images/Hero.jpg` | Hero section background. |
+| `brand_assets/Images/Site Images/Automation and electrical.jpg` | Division 01 image. |
+| `brand_assets/Images/Site Images/Mechanical and mining.jpg` | Division 02 image. |
+| `brand_assets/Images/Site Images/Payload and weighing.jpg` | Division 03 image. |
+| `brand_assets/Images/Site Images/Logistics and transport.jpg` | Division 04 image. |
+| `brand_assets/Images/Site Images/Industrial supplies.jpeg` | Division 05 image. |
+| `brand_assets/Images/Site Images/Projects and egineering.jpg` | Division 06 image. |
+
+### Brand Colours (CSS variables in `css/style.css`)
+| Variable | Hex | Use |
+|---|---|---|
+| `--gold` | `#C9941A` | Primary accent, headings, borders |
+| `--gold-light` | `#E8B030` | Hover states, gradients |
+| `--green` | `#22A845` | Secondary accent, green division cards |
+| `--green-dark` | `#1A7A2E` | Green gradients |
+| `--bg-deep` | `#070A0D` | Page background |
+| `--bg-base` | `#0E1218` | Cards, elevated surfaces |
+| `--font-display` | Rajdhani | All headings |
+| `--font-body` | Inter | Body copy |
 
 ## Anti-Generic Guardrails
 - **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.
@@ -53,6 +81,26 @@
 - Do not use `transition-all`
 - Do not use default Tailwind blue/indigo as primary color
 
-## Online Push Rules
-- We are syncing all of the changes to GitHub which will automatically be pushed to Vercel, but when I make changes here were always going to test on local host until i tell you explicitly to push that to GitHub
- 
+## GitHub & Vercel Deployment Workflow
+
+### Repository
+- **GitHub repo:** `ChiefKeeth/MESI-test-website` (branch: `main`)
+- **Vercel:** auto-deploys from `main` — every push to GitHub triggers a live deployment automatically. No manual Vercel step needed.
+
+### Push workflow
+1. Make and verify changes on `localhost:3000`
+2. Stage files: `git add <files>` — be specific, never `git add -A` blindly
+3. Commit: `git commit -m "descriptive message"`
+4. Push: `git push origin main`
+5. Vercel picks up the push and deploys within ~1 minute
+
+### Rules
+- **Never push without explicit user instruction.** Test everything on localhost first.
+- The user will say "push it", "push to GitHub", or similar — that is the trigger.
+- Always confirm what files are being committed (`git status`) before pushing.
+- Never force-push (`--force`) to `main`.
+- Commit messages should describe WHY the change was made, not just what files changed.
+
+### Node / Git paths (if not in shell PATH)
+- Node: `C:\Program Files\nodejs\node.exe`
+- Git: prepend `$env:PATH = "C:\Program Files\Git\cmd;$env:PATH"` before git commands in PowerShell
