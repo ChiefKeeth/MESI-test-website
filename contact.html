@@ -204,7 +204,10 @@
   <style>
     .contact-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 5rem; align-items: start; }
     @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      /* !important overrides the inline grid-template-columns on .contact-grid */
+      .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+      /* Remove sticky sidebar — it causes overlap in single-column layout */
+      [style*="position:sticky"] { position: static !important; }
       [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
     }
   </style>

@@ -20,8 +20,8 @@
   <!-- No padding-top on the section itself — image fills behind nav -->
   <section style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;" class="circuit-bg">
 
-    <!-- BG image layer — inset:0 covers full section including behind the nav -->
-    <div style="position:absolute;inset:0;background-image:url('brand_assets/Images/Site Images/Hero.jpg');background-size:cover;background-position:center;z-index:0;"></div>
+    <!-- BG image layer — tall (175%) so parallax translateY has room without gaps -->
+    <div id="hero-bg" style="position:absolute;top:0;left:0;width:100%;height:175%;background-image:url('brand_assets/Images/Site Images/Hero.jpg');background-size:cover;background-position:center top;z-index:0;will-change:transform;"></div>
     <!-- Dark overlay — stronger left, lighter right -->
     <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(7,10,13,0.92) 0%,rgba(7,10,13,0.75) 50%,rgba(7,10,13,0.45) 100%);z-index:1;"></div>
     <!-- circuit grid overlay -->
@@ -358,6 +358,22 @@
 
   <script src="js/components.js"></script>
   <script>initPage('home');</script>
+  <script>
+    // Hero parallax — bg moves at 40% of scroll speed (lags behind content)
+    (function() {
+      var bg = document.getElementById('hero-bg');
+      var section = bg && bg.closest('section');
+      if (!bg || !section) return;
+      function tick() {
+        var sy = window.scrollY;
+        if (sy <= section.offsetHeight) {
+          bg.style.transform = 'translateY(' + (sy * 0.4) + 'px)';
+        }
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    })();
+  </script>
 
   <style>
     @media (max-width: 767px) {

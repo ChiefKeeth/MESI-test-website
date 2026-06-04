@@ -231,10 +231,14 @@ body {
 .div-card-bg::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(to bottom, rgba(7,10,13,0.25) 0%, rgba(7,10,13,0.85) 100%);
+  transition: background 0.7s ease;
 }
 .div-card:hover .div-card-bg {
   clip-path: inset(0% 0 0 0);      /* wipe upward to reveal */
   transform: scale(1.02);
+}
+.div-card:hover .div-card-bg::after {
+  background: linear-gradient(to bottom, rgba(7,10,13,0.55) 0%, rgba(7,10,13,0.96) 100%);
 }
 .div-card:hover { border-color: rgba(201,148,26,0.4); transform: translateY(-6px); box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 24px 56px rgba(0,0,0,0.4), 0 0 48px rgba(201,148,26,0.08); }
 .div-card.green:hover { border-color: rgba(34,168,69,0.4); }
@@ -243,6 +247,11 @@ body {
   transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
 }
 .div-card:hover .div-card-content { transform: translateY(-4px); }
+/* Hover text contrast — only activates on the card being hovered */
+.div-card-content p { transition: color 0.55s ease; }
+.div-card:hover .div-card-content p { color: #BDB5A4 !important; }
+.div-card-content h3 { transition: color 0.4s ease; }
+.div-card:hover .div-card-content h3 { color: #FFFFFF !important; }
 .div-card-num {
   position: absolute; right: 1.25rem; top: 0.25rem;
   font-family: var(--font-display); font-weight: 700; font-size: 5.5rem; line-height: 1;
@@ -315,8 +324,11 @@ body {
   background: rgba(201,148,26,0.07); border: 1px solid rgba(201,148,26,0.14); border-radius: 3px;
   font-family: var(--font-display); font-size: 0.65rem; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase; color: #6B6560;
+  transition: color 0.45s ease, background 0.45s ease, border-color 0.45s ease;
 }
 .chip-green { background: rgba(34,168,69,0.07); border-color: rgba(34,168,69,0.14); }
+.div-card:hover .chip { color: var(--gold); background: rgba(201,148,26,0.13); border-color: rgba(201,148,26,0.32); }
+.div-card.green:hover .chip-green { color: var(--green); background: rgba(34,168,69,0.13); border-color: rgba(34,168,69,0.32); }
 .chip-lit { color: var(--gold); border-color: rgba(201,148,26,0.3); }
 .pill {
   padding: 0.45rem 1.25rem; border: 1px solid rgba(201,148,26,0.14); border-radius: 100px;
@@ -342,13 +354,16 @@ body {
 
 /* ── Division Panels (Divisions page) ── */
 .div-panel {
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
 }
 .div-panel-img {
   position: relative; overflow: hidden; min-height: 560px;
 }
 .div-panel-img img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  /* absolute fill — guarantees the image matches panel height regardless of content length */
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
   transition: transform 0.8s ease;
   display: block;
 }
@@ -356,13 +371,13 @@ body {
 .div-panel-img-overlay {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(to right, transparent 52%, var(--bg-deep) 100%),
-    linear-gradient(to top, rgba(7,10,13,1) 0%, rgba(7,10,13,1) 38%, rgba(7,10,13,0.5) 58%, transparent 75%);
+    linear-gradient(to right, transparent 55%, var(--bg-deep) 100%),
+    linear-gradient(to top, rgba(7,10,13,0.6) 0%, rgba(7,10,13,0.15) 12%, transparent 28%);
 }
 .div-panel.reverse .div-panel-img-overlay {
   background:
-    linear-gradient(to left, transparent 52%, var(--bg-deep) 100%),
-    linear-gradient(to top, rgba(7,10,13,1) 0%, rgba(7,10,13,1) 38%, rgba(7,10,13,0.5) 58%, transparent 75%);
+    linear-gradient(to left, transparent 55%, var(--bg-deep) 100%),
+    linear-gradient(to top, rgba(7,10,13,0.6) 0%, rgba(7,10,13,0.15) 12%, transparent 28%);
 }
 .div-panel-content {
   padding: 4.5rem 3.5rem;
@@ -420,6 +435,31 @@ footer { background: #040608; border-top: 1px solid rgba(201,148,26,0.08); paddi
 .spin-slow { animation: spin-slow 40s linear infinite; }
 @keyframes pulse-orb { 0%,100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
 .pulse-orb { animation: pulse-orb 8s ease-in-out infinite; }
+
+/* ── MESI Symbol Decoration (Divisions hero — static) ── */
+.mesi-symbol-wrap {
+  display: none;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 320px;
+}
+.mesi-symbol-img {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  opacity: 0.18;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, rgba(0,0,0,0.65) 48%, transparent 70%);
+  mask-image: radial-gradient(ellipse at center, black 20%, rgba(0,0,0,0.65) 48%, transparent 70%);
+  filter: sepia(0.3) saturate(2.5) brightness(1.8);
+}
+@media (min-width: 900px) {
+  .mesi-symbol-wrap { display: block; }
+}
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {

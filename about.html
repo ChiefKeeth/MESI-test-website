@@ -18,7 +18,9 @@
 
   <!-- ═══ PAGE HERO ═══ -->
   <section class="page-hero circuit-bg" style="position:relative;overflow:hidden;">
-    <div class="orb" style="top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,148,26,0.06) 0%,transparent 70%);"></div>
+    <!-- Particles background -->
+    <div id="particles-hero" style="position:absolute;inset:0;z-index:0;"></div>
+    <div class="orb" style="top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,148,26,0.06) 0%,transparent 70%);z-index:1;"></div>
 
     <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:2;">
       <div style="max-width:700px;">
@@ -270,6 +272,8 @@
 
   <script src="js/components.js"></script>
   <script>initPage('about');</script>
+  <script src="js/particles-brand.js"></script>
+  <script>initMesiParticles('particles-hero');</script>
 
   <style>
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
@@ -277,10 +281,12 @@
     .values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.875rem; }
     .why-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
     @media (max-width: 767px) {
-      .about-grid { display: block; }
-      .vm-grid { grid-template-columns: 1fr; }
-      .values-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-layout { grid-template-columns: 1fr; gap: 2rem; }
+      /* !important is required — inline styles always win over class rules without it */
+      .about-grid { display: block !important; }
+      .about-grid > * + * { margin-top: 2.5rem; }
+      .vm-grid { grid-template-columns: 1fr !important; }
+      .values-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .why-layout { grid-template-columns: 1fr !important; gap: 2rem !important; }
       .why-layout [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
     }
   </style>

@@ -181,9 +181,15 @@ function _initReveal() {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+  // Trigger as soon as 1% of the element is near the viewport — fires before it's fully on screen
+  }, { threshold: 0.01, rootMargin: '0px 0px 60px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Fallback: after 2.5s reveal anything still hidden (catches edge cases on iOS)
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 2500);
 }
 
 /* ── Card Tilt (image tilt on hover) ── */

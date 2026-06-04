@@ -18,7 +18,9 @@
 
   <!-- ═══ PAGE HERO ═══ -->
   <section class="page-hero circuit-bg" style="position:relative;overflow:hidden;">
-    <div class="orb" style="bottom:-80px;left:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,168,69,0.05) 0%,transparent 70%);"></div>
+    <!-- Particles background -->
+    <div id="particles-hero" style="position:absolute;inset:0;z-index:0;"></div>
+    <div class="orb" style="bottom:-80px;left:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,168,69,0.05) 0%,transparent 70%);z-index:1;"></div>
 
     <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:2;">
       <div class="anim-0" style="display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;">
@@ -31,6 +33,11 @@
       <p class="anim-2" style="font-size:1.05rem;line-height:1.8;color:#5A5550;font-weight:300;max-width:580px;">
         MESI combines six specialist divisions into one integrated company — offering clients a single trusted partner capable of handling projects from concept through commissioning and beyond.
       </p>
+
+      <!-- MESI Symbol — static, desktop only -->
+      <div class="mesi-symbol-wrap">
+        <img src="brand_assets/Images/Mesi symbol.png" alt="" class="mesi-symbol-img">
+      </div>
     </div>
   </section>
 
@@ -288,5 +295,7 @@
 
   <script src="js/components.js"></script>
   <script>initPage('divisions');</script>
+  <script src="js/particles-brand.js"></script>
+  <script>initMesiParticles('particles-hero');</script>
 </body>
 </html>
