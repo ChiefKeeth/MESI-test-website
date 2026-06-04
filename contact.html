@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact MESI — engineering and industrial solutions across Southern Africa. Get a quote, enquire about a division, or discuss your next project. sales@mesi.co.za | +27 71 853 4802">
+  <title>Contact — MESI Engineering &amp; Industrial Solutions</title>
+  <link rel="icon" type="image/png" href="brand_assets/Images/MESI Cropped logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero circuit-bg" style="position:relative;overflow:hidden;">
+    <div class="orb" style="top:-80px;right:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,148,26,0.06) 0%,transparent 70%);"></div>
+
+    <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:2;">
+      <div style="max-width:600px;">
+        <div class="anim-0" style="display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;">
+          <div style="width:36px;height:1px;background:#C9941A;"></div>
+          <span class="label">Let's Connect</span>
+        </div>
+        <h1 class="page-h1 anim-1" style="color:#F2EDE0;margin-bottom:1.25rem;">
+          Get in Touch With<br><span class="text-gold">Our Team</span>
+        </h1>
+        <p class="anim-2" style="font-size:1.05rem;line-height:1.8;color:#5A5550;font-weight:300;">
+          Whether you need a quote, want to discuss a project, or just want to learn more about what MESI can do for your operation — we're here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CONTACT CONTENT ═══ -->
+  <section style="padding:7rem 0;background:#070A0D;position:relative;overflow:hidden;" class="circuit-bg">
+    <div class="orb" style="bottom:-100px;left:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,168,69,0.04) 0%,transparent 70%);"></div>
+
+    <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;">
+      <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:5rem;align-items:start;" class="contact-grid">
+
+        <!-- Form -->
+        <div class="reveal">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:2rem;">
+            <div style="width:36px;height:1px;background:#C9941A;"></div>
+            <span class="label">Send Us a Message</span>
+          </div>
+
+          <form id="contact-form" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:1.25rem;">
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+              <div class="form-field">
+                <label class="form-label" for="name">Full Name *</label>
+                <input class="form-input" id="name" type="text" name="name" placeholder="Your full name" required>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="email">Email Address *</label>
+                <input class="form-input" id="email" type="email" name="email" placeholder="you@company.com" required>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+              <div class="form-field">
+                <label class="form-label" for="company">Company / Organisation</label>
+                <input class="form-input" id="company" type="text" name="company" placeholder="Company name">
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="phone">Phone Number</label>
+                <input class="form-input" id="phone" type="tel" name="phone" placeholder="+27 XX XXX XXXX">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="division">Division of Interest</label>
+              <select class="form-select" id="division" name="division">
+                <option value="">— Select a division —</option>
+                <option value="automation">Automation &amp; Electrical</option>
+                <option value="mechanical">Mechanical &amp; Mining</option>
+                <option value="payload">Payload &amp; Weighing</option>
+                <option value="logistics">Logistics &amp; Transport</option>
+                <option value="supplies">Industrial Supplies</option>
+                <option value="projects">Projects &amp; Engineering</option>
+                <option value="general">General Enquiry</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="message">Message *</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Describe your project or enquiry..." required></textarea>
+            </div>
+
+            <div>
+              <button type="submit" class="btn-gold" style="width:100%;justify-content:center;">
+                Send Message
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+              </button>
+            </div>
+
+            <p id="form-status" style="display:none;font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.06em;text-align:center;padding:0.75rem;border-radius:4px;"></p>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="reveal" style="position:sticky;top:calc(var(--nav-h) + 2rem);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:2rem;">
+            <div style="width:36px;height:1px;background:#C9941A;"></div>
+            <span class="label">Our Details</span>
+          </div>
+
+          <!-- Contact cards -->
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;">
+
+            <a href="tel:+27718534802" style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:rgba(34,168,69,0.04);border:1px solid rgba(34,168,69,0.12);border-radius:6px;text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(34,168,69,0.3)';this.style.background='rgba(34,168,69,0.07)'" onmouseout="this.style.borderColor='rgba(34,168,69,0.12)';this.style.background='rgba(34,168,69,0.04)'">
+              <div style="width:44px;height:44px;border-radius:8px;background:rgba(34,168,69,0.1);border:1px solid rgba(34,168,69,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="19" height="19" viewBox="0 0 17 17" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round"><path d="M14.5 10.8l-2.1-.24a1.5 1.5 0 00-1.23.44l-1.53 1.53a11.25 11.25 0 01-4.9-4.9l1.54-1.54a1.5 1.5 0 00.43-1.23L6.47 2.77A1.5 1.5 0 005 1.5H3a1.5 1.5 0 00-1.5 1.6A14 14 0 0015 16.75a1.5 1.5 0 001.6-1.5v-3a1.5 1.5 0 00-2.1-1.45z"/></svg>
+              </div>
+              <div>
+                <div style="font-family:'Rajdhani',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#22A845;margin-bottom:3px;">Call Us</div>
+                <div style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;color:#F2EDE0;">+27 71 853 4802</div>
+              </div>
+            </a>
+
+            <a href="mailto:sales@mesi.co.za" style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:rgba(201,148,26,0.04);border:1px solid rgba(201,148,26,0.12);border-radius:6px;text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(201,148,26,0.3)';this.style.background='rgba(201,148,26,0.07)'" onmouseout="this.style.borderColor='rgba(201,148,26,0.12)';this.style.background='rgba(201,148,26,0.04)'">
+              <div style="width:44px;height:44px;border-radius:8px;background:rgba(201,148,26,0.1);border:1px solid rgba(201,148,26,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="19" height="19" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3.5" width="13" height="10" rx="1.5"/><path d="M2 6l6.5 4L15 6"/></svg>
+              </div>
+              <div>
+                <div style="font-family:'Rajdhani',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#C9941A;margin-bottom:3px;">Email Us</div>
+                <div style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;color:#F2EDE0;">sales@mesi.co.za</div>
+              </div>
+            </a>
+
+            <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:rgba(201,148,26,0.04);border:1px solid rgba(201,148,26,0.12);border-radius:6px;">
+              <div style="width:44px;height:44px;border-radius:8px;background:rgba(201,148,26,0.1);border:1px solid rgba(201,148,26,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="19" height="19" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round"><path d="M8.5 1.5C6.15 1.5 4.25 3.4 4.25 5.75c0 4.25 4.25 9.75 4.25 9.75S12.75 10 12.75 5.75c0-2.35-1.9-4.25-4.25-4.25z"/><circle cx="8.5" cy="5.75" r="1.5"/></svg>
+              </div>
+              <div>
+                <div style="font-family:'Rajdhani',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#C9941A;margin-bottom:3px;">Our Address</div>
+                <div style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:0.04em;color:#F2EDE0;line-height:1.4;">28 Amethyst Road<br>Centurion, Gauteng 0157<br>South Africa</div>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:rgba(34,168,69,0.04);border:1px solid rgba(34,168,69,0.12);border-radius:6px;">
+              <div style="width:44px;height:44px;border-radius:8px;background:rgba(34,168,69,0.1);border:1px solid rgba(34,168,69,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+              </div>
+              <div>
+                <div style="font-family:'Rajdhani',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#22A845;margin-bottom:3px;">Website</div>
+                <div style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;color:#F2EDE0;">www.mesi.co.za</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dividers list -->
+          <div style="padding:1.5rem;background:linear-gradient(145deg,#0C1016,#131820);border:1px solid rgba(201,148,26,0.1);border-radius:6px;">
+            <div style="font-family:'Rajdhani',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#4A4540;margin-bottom:1rem;">Our Divisions</div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <a href="divisions.html#automation" style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;color:#6B6560;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:8px;" onmouseover="this.style.color='#C9941A'" onmouseout="this.style.color='#6B6560'"><div class="dot-gold"></div>Automation &amp; Electrical</a>
+              <a href="divisions.html#mechanical" style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;color:#6B6560;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:8px;" onmouseover="this.style.color='#22A845'" onmouseout="this.style.color='#6B6560'"><div class="dot-green"></div>Mechanical &amp; Mining</a>
+              <a href="divisions.html#payload" style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;color:#6B6560;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:8px;" onmouseover="this.style.color='#C9941A'" onmouseout="this.style.color='#6B6560'"><div class="dot-gold"></div>Payload &amp; Weighing</a>
+              <a href="divisions.html#logistics" style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;color:#6B6560;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:8px;" onmouseover="this.style.color='#22A845'" onmouseout="this.style.color='#6B6560'"><div class="dot-green"></div>Logistics &amp; Transport</a>
+              <a href="divisions.html#supplies" style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;color:#6B6560;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:8px;" onmouseover="this.style.color='#C9941A'" onmouseout="this.style.color='#6B6560'"><div class="dot-gold"></div>Industrial Supplies</a>
+              <a href="divisions.html#projects" style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;color:#6B6560;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:8px;" onmouseover="this.style.color='#22A845'" onmouseout="this.style.color='#6B6560'"><div class="dot-green"></div>Projects &amp; Engineering</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/components.js"></script>
+  <script>
+    initPage('contact');
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const status = document.getElementById('form-status');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      // Simulate send (replace with actual fetch to your backend/form service)
+      setTimeout(() => {
+        status.style.display = 'block';
+        status.style.background = 'rgba(34,168,69,0.08)';
+        status.style.border = '1px solid rgba(34,168,69,0.25)';
+        status.style.color = '#22A845';
+        status.textContent = '✓ Message received — we\'ll be in touch shortly.';
+        e.target.reset();
+        btn.textContent = 'Message Sent';
+        btn.style.background = 'linear-gradient(135deg,#22A845,#1A7A2E)';
+      }, 1200);
+    }
+  </script>
+
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 5rem; align-items: start; }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</body>
+</html>
