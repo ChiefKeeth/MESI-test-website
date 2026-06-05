@@ -441,21 +441,23 @@ footer { background: #040608; border-top: 1px solid rgba(201,148,26,0.08); paddi
   display: none;
   position: absolute;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
   right: -20px;
   top: 50%;
   transform: translateY(-50%);
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
 }
 .mesi-symbol-img {
   display: block;
   width: 100%; height: 100%;
   object-fit: contain;
-  opacity: 0.18;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, rgba(0,0,0,0.65) 48%, transparent 70%);
-  mask-image: radial-gradient(ellipse at center, black 20%, rgba(0,0,0,0.65) 48%, transparent 70%);
-  filter: sepia(0.3) saturate(2.5) brightness(1.8);
+  opacity: 0.58;
+  filter:
+    drop-shadow(0 0 32px rgba(201,148,26,0.45))
+    drop-shadow(0 0 12px rgba(34,168,69,0.25))
+    brightness(1.1)
+    saturate(1.25);
 }
 @media (min-width: 900px) {
   .mesi-symbol-wrap { display: block; }
@@ -489,3 +491,224 @@ footer { background: #040608; border-top: 1px solid rgba(201,148,26,0.08); paddi
   .pillar-card p { font-size: 0.72rem !important; }
   .icon-circle-gold, .icon-circle-green { width: 48px !important; height: 48px !important; margin-bottom: 0.875rem !important; }
 }
+
+/* ════════════════════════════════════════
+   MOBILE DIVISIONS CAROUSEL
+   ════════════════════════════════════════ */
+.div-carousel-wrap { display: none; }
+
+@media (max-width: 767px) {
+  .div-grid-desktop { display: none !important; }
+  .div-carousel-wrap {
+    display: block;
+    margin: 0 -1.5rem;      /* escape parent padding — full bleed */
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* ── track ── */
+.dcc-viewport {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+.dcc-track {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  will-change: transform;
+  transition: transform 0.75s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+/* suppress transitions during init */
+.dcc-notrans,
+.dcc-notrans .dcc-card { transition: none !important; }
+
+/* ── perspective wrapper per slide ── */
+.dcc-persp {
+  perspective: 900px;
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── card ── */
+.dcc-card {
+  width: 220px;
+  height: 310px;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(201,148,26,0.12);
+  background: #0C1016;
+  cursor: pointer;
+  will-change: transform;
+  transition:
+    transform 0.75s cubic-bezier(0.34, 1.4, 0.64, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+.dcc-card.dcc-card--green { border-color: rgba(34,168,69,0.12); }
+
+/* active card glow */
+.dcc-persp.is-active .dcc-card {
+  border-color: rgba(201,148,26,0.38);
+  box-shadow: 0 0 32px rgba(201,148,26,0.09), 0 14px 48px rgba(0,0,0,0.55);
+}
+.dcc-persp.is-active .dcc-card.dcc-card--green {
+  border-color: rgba(34,168,69,0.38);
+  box-shadow: 0 0 32px rgba(34,168,69,0.09), 0 14px 48px rgba(0,0,0,0.55);
+}
+
+/* ── background image — hidden until active ── */
+.dcc-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+.dcc-persp.is-active .dcc-bg { opacity: 1; }
+
+/* gradient overlay (always present for text legibility) */
+.dcc-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(7,10,13,0.97) 0%,
+    rgba(7,10,13,0.72) 55%,
+    rgba(7,10,13,0.28) 100%
+  );
+  z-index: 1;
+}
+
+/* ── card body ── */
+.dcc-body {
+  position: absolute;
+  inset: 0;
+  padding: 1rem 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+.dcc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* division number */
+.dcc-num {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C9941A;
+  transition: opacity 0.3s ease;
+}
+.dcc-num--green { color: #22A845; }
+.dcc-persp:not(.is-active) .dcc-num { opacity: 0.5; }
+
+/* icon badge */
+.dcc-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  transition: opacity 0.35s ease;
+}
+.dcc-persp:not(.is-active) .dcc-icon { opacity: 0; }
+
+/* title */
+.dcc-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.22;
+  color: #F2EDE0;
+  margin-bottom: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+.dcc-persp:not(.is-active) .dcc-title { opacity: 0.45; }
+
+/* description + link — blur-fade on inactive */
+.dcc-meta {
+  opacity: 0;
+  filter: blur(4px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+.dcc-persp.is-active .dcc-meta {
+  opacity: 1;
+  filter: none;
+  pointer-events: auto;
+}
+.dcc-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  line-height: 1.62;
+  color: #7A7570;
+  font-weight: 300;
+  margin: 0 0 0.625rem;
+}
+.dcc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C9941A;
+  text-decoration: none;
+}
+.dcc-link--green { color: #22A845; }
+
+/* ── controls bar ── */
+.dcc-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+  padding: 0.35rem 1rem;
+  background: rgba(12,16,22,0.8);
+  border-radius: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(201,148,26,0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.dcc-btn {
+  background: none;
+  border: none;
+  color: #4A4540;
+  cursor: pointer;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.dcc-btn:active { color: #C9941A; }
+.dcc-btn:disabled { opacity: 0.28; cursor: default; }
+.dcc-dots { display: flex; align-items: center; gap: 5px; }
+.dcc-dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 100px;
+  cursor: pointer;
+  background: rgba(201,148,26,0.22);
+  transition: width 0.3s ease, background-color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.dcc-dot.is-active { width: 22px; background: #C9941A; }
