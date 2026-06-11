@@ -1,6 +1,6 @@
 # FABLE_PROGRESS.md — MESI Website Redesign Session
 
-**Date:** 2026-06-11 · **Status: ALL SECTIONS COMPLETE** · Verified on localhost:3000 — **not pushed/deployed** (waiting for "deploy").
+**Date:** 2026-06-11 · **Status: ALL SECTIONS COMPLETE** · Verified on localhost:3000 — **pushed/deployed** as commit `e4acc4f` on `main` (Vercel auto-deployed).
 
 ## Section Status
 | Section | Status | Notes |
@@ -47,7 +47,7 @@
 | About — BEE section | Optional: leadership/team photo to humanise the section (works without it). |
 | About — Vision/HSE parallax washes | Currently low-opacity WhatsApp photos; higher-quality branded shots would be better. |
 | Contact | Optional: office photo or embedded map for the address card. |
-| Footer | Real Privacy Policy / Terms of Use pages — links currently go to `#`. |
+| ~~Footer~~ | ~~Real Privacy Policy / Terms of Use pages~~ — **DONE 2026-06-11**: `privacy.html` + `terms.html` built and linked from footer. Client should review legal copy (entity name "MESI" may need full registered name / reg. number). |
 | Contact form | A form backend (Formspree/own endpoint) — submission is currently simulated in JS only. |
 
 ## Design Decisions for Client Review
@@ -70,5 +70,24 @@ git push origin main                # Vercel auto-deploys from main in ~1 min
 Repo: `ChiefKeeth/MESI-test-website` · Vercel: keethan-balkisson-s-projects/mesi-test-website.
 Note: untracked brand asset renames (`MESI Name TB.png` etc.) and the deleted old logo files must be included in the commit or the deployed site will have broken images.
 
+---
+
+# Session 2026-06-11 (later) — Legal Pages
+
+**Task:** Client asked for Terms of Use + Privacy Policy pages ("ill leave the designing up to you and edit later if needed"). **Status: COMPLETE**, verified on localhost — **not yet pushed** (waiting for client's "push it").
+
+## Files Changed
+- `privacy.html` — **new page.** POPIA-aligned Privacy Policy (11 sections), brand hero with Last Updated chips, sticky TOC sidebar with scrollspy, shine-border Information Officer contact card.
+- `terms.html` — **new page.** Terms of Use (11 sections: acceptance, acceptable use, IP, quotations disclaimer, third parties, liability w/ CPA carve-out, indemnity, privacy x-ref, SA governing law, changes, contact).
+- `css/style.css` — new shared `.legal-*` block (layout grid 250px+1fr, sticky `.legal-toc` w/ active states, `.legal-section/h2/num/body/list` + green list variant; ≤900px TOC becomes pill chips; ≤767px override so the global `section` padding rule doesn't inflate `.legal-section`).
+- `js/components.js` — footer Privacy/Terms links now point to the real pages (were `#`); new `_initLegalTOC()` scrollspy (IntersectionObserver, no-op on other pages) called from `initPage()`.
+- `check-console.mjs` — page list extended with the two new pages.
+- `CLAUDE.md` — multi-page list updated to mention the legal pages (footer-only links).
+
+## Notes / Decisions
+- Legal copy is placeholder-quality-but-real: POPIA (Act 4 of 2013) for privacy, SA governing law + Consumer Protection Act carve-out for terms. Entity is just "MESI" — client may want full registered name + reg number. Last Updated date: 11 June 2026.
+- **Gotcha found:** `overflow:hidden` on a section ancestor breaks `position:sticky` — legal pages use `overflow:clip` instead. (contact.html's sticky sidebar has this same latent bug — left untouched, mention to client if it matters.)
+- Verified: 2 screenshot rounds desktop (1440) + mobile (390), scrollspy active states confirmed, `check-console.mjs` clean on all 6 pages.
+
 ## Resume Point
-Nothing pending. Next action is client review → "deploy".
+Legal pages complete on localhost, **awaiting client's instruction to push** (`privacy.html`, `terms.html`, `css/style.css`, `js/components.js`, `check-console.mjs`, `CLAUDE.md`, `FABLE_PROGRESS.md`). Last deployed commit is still `e4acc4f`. Dev server: `node serve.mjs` → http://localhost:3000.

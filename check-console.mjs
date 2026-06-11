@@ -3,7 +3,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const puppeteer = require('C:/Users/keeth/AppData/Roaming/npm/node_modules/puppeteer');
 
-const pages = ['/', '/about.html', '/divisions.html', '/contact.html'];
+const pages = ['/', '/about.html', '/divisions.html', '/contact.html', '/privacy.html', '/terms.html'];
 const browser = await puppeteer.launch({
   executablePath: 'C:/Users/keeth/.cache/puppeteer/chrome/win64-149.0.7827.22/chrome-win64/chrome.exe',
   args: ['--no-sandbox', '--disable-setuid-sandbox'],

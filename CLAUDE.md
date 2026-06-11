@@ -2,6 +2,19 @@
 
 ## Always Do First
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
+- **Read `FABLE_PROGRESS.md`** (project root) before starting any work — it records what was done in previous sessions and where to resume.
+
+## Progress & Continuity
+Sessions can be cut off at any time (usage/credit limits). To make sure work is never lost:
+- **`FABLE_PROGRESS.md`** in the project root is the single source of truth for session progress.
+- After completing each major task or section, update it with:
+  - Section/task name and completion status
+  - Files changed (with a one-line note on what changed in each)
+  - Any notes, blockers, or decisions made
+  - A clear **Resume Point**: exactly where to pick up if interrupted
+- Update it **as you go**, not only at the end — assume the session could end after any step.
+- At the start of every session, read it and continue from the Resume Point without re-asking the user what to do.
+- Keep it current: mark superseded items done/obsolete rather than leaving stale instructions.
 
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
@@ -25,7 +38,7 @@
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
 
 ## Output Defaults
-- The site is now **multi-page**: `index.html` (Home), `about.html`, `divisions.html`, `contact.html`
+- The site is now **multi-page**: `index.html` (Home), `about.html`, `divisions.html`, `contact.html`, plus legal pages `privacy.html` and `terms.html` (linked from the footer only, not the main nav)
 - Shared styles live in `css/style.css` — all brand CSS variables are defined there. Do not hardcode colours.
 - Shared nav and footer are injected by `js/components.js` via `initPage('pagename')`. Add new pages there too.
 - Tailwind CSS via CDN: `<script src="https://cdn.tailwindcss.com"></script>`

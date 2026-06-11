@@ -117,8 +117,8 @@ function _getFooterHTML() {
     <div style="border-top:1px solid rgba(255,255,255,0.04);padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
       <p style="color:var(--text-faint);font-size:0.8rem;">© 2026 MESI. All rights reserved. Serving Southern Africa.</p>
       <div style="display:flex;gap:1.5rem;">
-        <a href="#" class="footer-link" style="font-size:0.8rem;">Privacy Policy</a>
-        <a href="#" class="footer-link" style="font-size:0.8rem;">Terms of Use</a>
+        <a href="privacy.html" class="footer-link" style="font-size:0.8rem;">Privacy Policy</a>
+        <a href="terms.html" class="footer-link" style="font-size:0.8rem;">Terms of Use</a>
       </div>
     </div>
   </div>
@@ -160,6 +160,31 @@ function initPage(currentPage) {
 
   // Card tilt on hover
   _initTilt();
+
+  // Legal-page table of contents scrollspy (no-op on pages without one)
+  _initLegalTOC();
+}
+
+/* ── Legal TOC scrollspy ── */
+function _initLegalTOC() {
+  const links = document.querySelectorAll('.legal-toc-link');
+  if (!links.length) return;
+  const byId = new Map();
+  links.forEach(l => {
+    const id = (l.getAttribute('href') || '').slice(1);
+    const section = document.getElementById(id);
+    if (section) byId.set(section, l);
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      links.forEach(l => l.classList.remove('active'));
+      const link = byId.get(entry.target);
+      if (link) link.classList.add('active');
+    });
+  // Band across the upper-middle of the viewport decides the "current" section
+  }, { rootMargin: '-15% 0px -65% 0px' });
+  byId.forEach((_, section) => io.observe(section));
 }
 
 /* ── Mobile menu ── */
