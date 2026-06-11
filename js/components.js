@@ -4,7 +4,8 @@
 
 /* ── Image asset map ── */
 const IMG = {
-  logo:       'brand_assets/Images/MESI Cropped logo.png',
+  logo:       'brand_assets/Images/MESI Name TB trimmed.png',
+  symbol:     'brand_assets/Images/Mesi Symbol TB.png',
   heroAbout:  'brand_assets/Images/WhatsApp Image 2026-06-04 at 05.58.44.jpeg',
   automation: 'brand_assets/Images/WhatsApp Image 2026-06-04 at 05.58.47 (2).jpeg',
   mechanical: 'brand_assets/Images/WhatsApp Image 2026-06-04 at 05.58.47 (1).jpeg',
@@ -36,21 +37,19 @@ function _getNavHTML(currentPage) {
 
   return `<nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <div class="nav-logo-wrap">
-        <img src="brand_assets/Images/MESI Cropped logo.png" alt="MESI" class="nav-logo-img">
-      </div>
-      <div>
-        <div class="nav-brand-name">MESI</div>
-        <div class="nav-brand-sub">Engineering &amp; Industrial Solutions</div>
-      </div>
+    <a href="index.html" class="nav-brand" aria-label="MESI — Home">
+      <img src="brand_assets/Images/MESI Name TB trimmed.png" alt="MESI" class="nav-wordmark">
+      <span class="nav-brand-sub">Engineering &amp; Industrial Solutions</span>
     </a>
     <div class="nav-links">${desktop}</div>
     <div class="nav-actions">
       <a href="contact.html" class="btn-gold btn-sm nav-cta">Get a Quote</a>
-      <button class="nav-hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()">
+        <svg class="ham-open" width="18" height="18" viewBox="0 0 18 18" fill="none">
           <path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+        <svg class="ham-close" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
         </svg>
       </button>
     </div>
@@ -70,20 +69,21 @@ function _getFooterHTML() {
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;">
-          <div class="nav-logo-wrap"><img src="brand_assets/Images/MESI Cropped logo.png" alt="MESI" class="nav-logo-img"></div>
-          <div>
-            <div class="nav-brand-name">MESI</div>
-            <div style="font-size:0.5rem;letter-spacing:0.12em;color:#2E2A26;text-transform:uppercase;">Integrated Engineering &amp; Industrial Solutions</div>
-          </div>
+        <div style="margin-bottom:1.25rem;">
+          <img src="brand_assets/Images/MESI Name TB trimmed.png" alt="MESI" class="footer-wordmark">
+          <div style="font-size:0.55rem;letter-spacing:0.14em;color:var(--text-faint);text-transform:uppercase;margin-top:0.5rem;">Integrated Engineering &amp; Industrial Solutions</div>
         </div>
-        <p style="color:#2E2A26;font-size:0.875rem;line-height:1.75;max-width:340px;font-weight:300;">
+        <p style="color:var(--text-dim);font-size:0.875rem;line-height:1.75;max-width:340px;font-weight:300;">
           Multidisciplinary engineering and industrial solutions for mining, automation, mechanical, logistics, and infrastructure sectors throughout Southern Africa.
         </p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.25rem;">
+          <span class="chip chip-lit">Level 1 BBBEE</span>
+          <span class="chip chip-lit chip-lit-green">100% Black Women-Owned</span>
+        </div>
         <div style="display:flex;flex-direction:column;gap:0.625rem;margin-top:1.5rem;">
           <div class="contact-item">
             <svg width="16" height="16" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3.5" width="13" height="10" rx="1.5"/><path d="M2 6l6.5 4L15 6"/></svg>
-            <a href="mailto:sales@mesi.co.za" style="color:#4A4540;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='#C9941A'" onmouseout="this.style.color='#4A4540'">sales@mesi.co.za</a>
+            <a href="mailto:sales@mesi.co.za" class="footer-link" style="display:inline;font-size:0.875rem;">sales@mesi.co.za</a>
           </div>
           <div class="contact-item">
             <svg width="16" height="16" viewBox="0 0 17 17" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round"><path d="M14.5 10.8l-2.1-.24a1.5 1.5 0 00-1.23.44l-1.53 1.53a11.25 11.25 0 01-4.9-4.9l1.54-1.54a1.5 1.5 0 00.43-1.23L6.47 2.77A1.5 1.5 0 005 1.5H3a1.5 1.5 0 00-1.5 1.6A14 14 0 0015 16.75a1.5 1.5 0 001.6-1.5v-3a1.5 1.5 0 00-2.1-1.45z"/></svg>
@@ -108,13 +108,14 @@ function _getFooterHTML() {
           <a href="about.html" class="footer-link">About MESI</a>
           <a href="about.html#vision" class="footer-link">Vision &amp; Mission</a>
           <a href="about.html#values" class="footer-link">Core Values</a>
+          <a href="about.html#bee" class="footer-link">Transformation &amp; BBBEE</a>
           <a href="about.html#hse" class="footer-link">HSE Commitment</a>
           <a href="contact.html" class="footer-link">Contact Us</a>
         </div>
       </div>
     </div>
     <div style="border-top:1px solid rgba(255,255,255,0.04);padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
-      <p style="color:#222018;font-size:0.8rem;">© 2026 MESI. All rights reserved. Serving Southern Africa.</p>
+      <p style="color:var(--text-faint);font-size:0.8rem;">© 2026 MESI. All rights reserved. Serving Southern Africa.</p>
       <div style="display:flex;gap:1.5rem;">
         <a href="#" class="footer-link" style="font-size:0.8rem;">Privacy Policy</a>
         <a href="#" class="footer-link" style="font-size:0.8rem;">Terms of Use</a>
@@ -162,15 +163,26 @@ function initPage(currentPage) {
 }
 
 /* ── Mobile menu ── */
+function _setMenuState(open) {
+  const m = document.getElementById('mobile-menu');
+  const btn = document.querySelector('.nav-hamburger');
+  if (!m) return;
+  open ? m.removeAttribute('hidden') : m.setAttribute('hidden', '');
+  if (btn) btn.setAttribute('aria-expanded', String(open));
+}
 function toggleMobileMenu() {
   const m = document.getElementById('mobile-menu');
-  if (!m) return;
-  m.hasAttribute('hidden') ? m.removeAttribute('hidden') : m.setAttribute('hidden', '');
+  if (m) _setMenuState(m.hasAttribute('hidden'));
 }
-function closeMobileMenu() {
+function closeMobileMenu() { _setMenuState(false); }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileMenu();
+});
+document.addEventListener('click', (e) => {
   const m = document.getElementById('mobile-menu');
-  if (m) m.setAttribute('hidden', '');
-}
+  if (m && !m.hasAttribute('hidden') && !e.target.closest('#nav')) closeMobileMenu();
+});
 
 /* ── Scroll Reveal ── */
 function _initReveal() {

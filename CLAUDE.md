@@ -15,7 +15,7 @@
 - If the server is already running, do not start a second instance.
 
 ## Screenshot Workflow
-- Puppeteer is installed at `C:\Users\Keethon\AppData\Roaming\npm\node_modules\puppeteer`. Chrome cache is at `C:\Users\Keethon\.cache\puppeteer\chrome\win64-149.0.7827.22\chrome-win64\chrome.exe`.
+- Puppeteer is installed at `C:\Users\keeth\AppData\Roaming\npm\node_modules\puppeteer`. Chrome cache is at `C:\Users\keeth\.cache\puppeteer\chrome\win64-149.0.7827.22\chrome-win64\chrome.exe`.
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
 - Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
 - Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
@@ -39,10 +39,12 @@
 ### Current Brand Asset Map
 | File | Use |
 |---|---|
-| `brand_assets/Images/MESI Cropped logo.png` | **Primary logo** — badge + MESI letters, black bg. Use in nav and footer. |
-| `brand_assets/Images/MESI Logo.png` | Full logo with subtitle. Use in large-format contexts. |
-| `brand_assets/Images/MESI Name logo.png` | Name-only wordmark. |
-| `brand_assets/Images/Mesi symbol.png` | Badge/icon only. Use as favicon or icon mark. |
+| `brand_assets/Images/MESI Name TB trimmed.png` | **Primary wordmark** — transparent bg, auto-trimmed. Use in nav and footer. |
+| `brand_assets/Images/MESI Name TB.png` | Name-only wordmark, transparent bg (untrimmed source of the above). |
+| `brand_assets/Images/MESI Name.png` | Name-only wordmark on black bg. |
+| `brand_assets/Images/Mesi Symbol TB.png` | Badge/icon only, transparent bg. Used as favicon and Divisions hero badge. |
+| `brand_assets/Images/MESI Logo TB.png` / `MESI Logo.png` | Full logo with subtitle. Large-format contexts only. |
+| `brand_assets/Images/MESI Cropped TB.png` / `MESI Cropped .png` | Badge + MESI letters. (Note: there is NO `MESI Cropped logo.png` — never reference it.) |
 | `brand_assets/Images/Site Images/Hero.jpg` | Hero section background. |
 | `brand_assets/Images/Site Images/Automation and electrical.jpg` | Division 01 image. |
 | `brand_assets/Images/Site Images/Mechanical and mining.jpg` | Division 02 image. |

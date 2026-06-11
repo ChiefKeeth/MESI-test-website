@@ -5,7 +5,7 @@ import { join } from 'path';
 import { fileURLToPath } from 'url';
 
 const require = createRequire(import.meta.url);
-const puppeteer = require('C:/Users/Keethon/AppData/Roaming/npm/node_modules/puppeteer');
+const puppeteer = require('C:/Users/keeth/AppData/Roaming/npm/node_modules/puppeteer');
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -23,13 +23,25 @@ const filename = label ? `screenshot-${nextNum}-${label}.png` : `screenshot-${ne
 const filepath = join(screenshotsDir, filename);
 
 const browser = await puppeteer.launch({
-  executablePath: 'C:/Users/Keethon/.cache/puppeteer/chrome/win64-149.0.7827.22/chrome-win64/chrome.exe',
+  executablePath: 'C:/Users/keeth/.cache/puppeteer/chrome/win64-149.0.7827.22/chrome-win64/chrome.exe',
   args: ['--no-sandbox', '--disable-setuid-sandbox'],
 });
 
 const page = await browser.newPage();
 await page.setViewport({ width: 1440, height: 900 });
 await page.goto(url, { waitUntil: 'networkidle2' });
+
+// Scroll through the page so IntersectionObserver reveals fire, then return to top
+await page.evaluate(async () => {
+  const step = 800;
+  for (let y = 0; y <= document.body.scrollHeight; y += step) {
+    window.scrollTo(0, y);
+    await new Promise(r => setTimeout(r, 60));
+  }
+  window.scrollTo(0, 0);
+});
+await new Promise(r => setTimeout(r, 1200));
+
 await page.screenshot({ path: filepath, fullPage: true });
 await browser.close();
 
