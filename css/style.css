@@ -611,8 +611,8 @@ footer { background: #040608; border-top: 1px solid rgba(201,148,26,0.08); paddi
 .pulse-orb { animation: pulse-orb 8s ease-in-out infinite; }
 
 /* ── MESI Symbol Decoration (Divisions hero) ──
-   Prominent badge treatment: large symbol inside a circular shine ring with
-   a layered gold/green glow behind it. Desktop only (≥900px). */
+   Large symbol with a layered gold/green glow behind it, no ring.
+   Desktop only (≥900px). */
 .mesi-symbol-wrap {
   display: none;
   position: absolute;
@@ -621,8 +621,8 @@ footer { background: #040608; border-top: 1px solid rgba(201,148,26,0.08); paddi
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 440px;
-  height: 440px;
+  width: 560px;
+  height: 560px;
 }
 .mesi-symbol-ring {
   width: 100%; height: 100%;
