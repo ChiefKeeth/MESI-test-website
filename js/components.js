@@ -39,7 +39,7 @@ function _getNavHTML(currentPage) {
   <div class="nav-inner">
     <a href="index.html" class="nav-brand" aria-label="MESI — Home">
       <img src="brand_assets/Images/MESI Name TB trimmed.png" alt="MESI" class="nav-wordmark">
-      <span class="nav-brand-sub">Engineering &amp; Industrial Solutions</span>
+      <span class="nav-brand-sub">Mechanical &amp; Electrical Systems Integration</span>
     </a>
     <div class="nav-links">${desktop}</div>
     <div class="nav-actions">
@@ -71,7 +71,7 @@ function _getFooterHTML() {
       <div class="footer-col">
         <div style="margin-bottom:1.25rem;">
           <img src="brand_assets/Images/MESI Name TB trimmed.png" alt="MESI" class="footer-wordmark">
-          <div style="font-size:0.55rem;letter-spacing:0.14em;color:var(--text-faint);text-transform:uppercase;margin-top:0.5rem;">Integrated Engineering &amp; Industrial Solutions</div>
+          <div style="font-size:0.55rem;letter-spacing:0.14em;color:var(--text-faint);text-transform:uppercase;margin-top:0.5rem;">Mechanical &amp; Electrical Systems Integration</div>
         </div>
         <p style="color:var(--text-dim);font-size:0.875rem;line-height:1.75;max-width:340px;font-weight:300;">
           Multidisciplinary engineering and industrial solutions for mining, automation, mechanical, logistics, and infrastructure sectors throughout Southern Africa.
