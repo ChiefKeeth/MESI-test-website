@@ -90,4 +90,21 @@ Note: untracked brand asset renames (`MESI Name TB.png` etc.) and the deleted ol
 - Verified: 2 screenshot rounds desktop (1440) + mobile (390), scrollspy active states confirmed, `check-console.mjs` clean on all 6 pages.
 
 ## Resume Point
-Legal pages complete on localhost, **awaiting client's instruction to push** (`privacy.html`, `terms.html`, `css/style.css`, `js/components.js`, `check-console.mjs`, `CLAUDE.md`, `FABLE_PROGRESS.md`). Last deployed commit is still `e4acc4f`. Dev server: `node serve.mjs` → http://localhost:3000.
+Legal pages were pushed as commit `9e1c796`. Dev server: `node serve.mjs` → http://localhost:3000.
+
+---
+
+# Session 2026-06-18 — Divisions Hero Symbol + Brand Tagline Fix
+
+**Status: COMPLETE**, verified on localhost, **pushed**.
+
+## Changes
+1. **Divisions hero symbol** — removed the rotating metallic `.shine-border` ring from the MESI symbol badge (`divisions.html`), enlarged `.mesi-symbol-wrap` 440px → 560px (`css/style.css`), kept the gold/green glow (`drop-shadow` filters on `.mesi-symbol-img` + radial-gradient background on `.mesi-symbol-ring`). Pushed as `733e445`.
+2. **Brand tagline correction** — client clarified MESI stands for "Mechanical & Electrical Systems Integration" (matches `brand_assets/brand-guide.html`, which already had this correct). The site-wide subtitle/tagline previously read "Engineering & Industrial Solutions" — corrected in:
+   - `js/components.js` — nav `.nav-brand-sub` and footer subtitle under wordmark.
+   - `<title>` tags in `index.html`, `about.html`, `divisions.html`, `contact.html`, `privacy.html`, `terms.html`.
+   - Verified no overflow/wrap at 900–1440px nav widths (checked via puppeteer bounding-rect script, then deleted the script). Pushed as `02ea7bb`.
+   - **Not changed:** longer descriptive body copy (meta descriptions, about.html intro paragraph, footer blurb) that says things like "multidisciplinary engineering and industrial solutions company" — these describe the business, not the acronym, and were left as-is. Flag to client if they want that copy aligned too.
+
+## Resume Point
+Both changes deployed. Last commit: `02ea7bb`. Dev server: `node serve.mjs` → http://localhost:3000.
