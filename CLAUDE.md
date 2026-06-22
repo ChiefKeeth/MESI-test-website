@@ -119,3 +119,10 @@ Sessions can be cut off at any time (usage/credit limits). To make sure work is 
 ### Node / Git paths (if not in shell PATH)
 - Node: `C:\Program Files\nodejs\node.exe`
 - Git: prepend `$env:PATH = "C:\Program Files\Git\cmd;$env:PATH"` before git commands in PowerShell
+
+## Secrets & API Keys
+- Never ask the user to paste a private/secret key (API keys, secret keys, tokens) into chat.
+- Instead, add a placeholder line to `.env` in the project root (e.g. `SOME_SECRET_KEY=paste-your-key-here`) and ask the user to fill it in directly via their editor.
+- `.env` is already gitignored — confirm it stays that way.
+- For each new secret added, also add it to Vercel's Production (and Preview, if relevant) environment variables via `vercel env add <NAME> <environment> --value="..." --yes`, reading the value from the local `.env` so it never appears in the conversation.
+- Public/non-secret values meant to be embedded in client-side HTML (e.g. a Turnstile/reCAPTCHA *site* key, a publishable Stripe key) are fine to share in chat — only the secret/private counterpart needs this treatment.

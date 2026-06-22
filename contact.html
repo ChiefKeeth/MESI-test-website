@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -93,6 +94,13 @@
               <label class="form-label" for="message">Message *</label>
               <textarea class="form-textarea" id="message" name="message" placeholder="Describe your project or enquiry..." required></textarea>
             </div>
+
+            <div style="position:absolute;left:-9999px;" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADpGimcJpoOeU_2C"></div>
 
             <div>
               <button type="submit" class="btn-gold" style="width:100%;justify-content:center;">
@@ -190,6 +198,17 @@
 
       const payload = Object.fromEntries(new FormData(form).entries());
 
+      if (!payload['cf-turnstile-response']) {
+        status.style.display = 'block';
+        status.style.background = 'rgba(220,60,60,0.08)';
+        status.style.border = '1px solid rgba(220,60,60,0.25)';
+        status.style.color = '#E05A5A';
+        status.textContent = '✕ Please wait for the verification check to complete, then try again.';
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        return;
+      }
+
       try {
         const res = await fetch('/api/contact', {
           method: 'POST',
@@ -205,9 +224,11 @@
         status.style.color = '#22A845';
         status.textContent = '✓ Message received — we\'ll be in touch shortly.';
         form.reset();
+        if (window.turnstile) window.turnstile.reset();
         btn.textContent = 'Message Sent';
         btn.style.background = 'linear-gradient(135deg,#22A845,#1A7A2E)';
       } catch (err) {
+        if (window.turnstile) window.turnstile.reset();
         status.style.display = 'block';
         status.style.background = 'rgba(220,60,60,0.08)';
         status.style.border = '1px solid rgba(220,60,60,0.25)';
