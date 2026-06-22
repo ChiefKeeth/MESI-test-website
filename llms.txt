@@ -1,0 +1,27 @@
+# MESI
+
+> MESI (Mechanical & Electrical Systems Integration) is a multidisciplinary engineering and industrial solutions company based in Centurion, Gauteng, South Africa, serving the mining, manufacturing, and infrastructure sectors across Southern Africa.
+
+MESI operates through six specialist divisions and offers an integrated, one-call service across all of them.
+
+## Divisions
+
+- **Automation & Electrical**: PLC programming, SCADA system development, MCC panel manufacturing, instrumentation engineering, electrical installations, industrial IoT integration, CCTV & access control, solar & UPS installations.
+- **Mechanical & Mining**: Mill and crusher maintenance, conveyor system installations, belt splicing, laser and drive train alignments, bearing installations, fabrication, full plant shutdown projects.
+- **Payload & Weighing**: Payload monitoring systems, truck scale systems, volumetric scanning, underground weighing, fleet monitoring and analytics, calibration and certification.
+- **Logistics & Transport**: Road freight, mining equipment transport, heavy and abnormal load transport, cross-border logistics, fleet management, warehousing support.
+- **Industrial Supplies**: Electrical, mechanical, mining, and safety equipment supply — components, bearings, pumps, valves, gearboxes, PPE, conveyor components.
+- **Projects & Engineering**: Turnkey project management, engineering design, feasibility studies, construction management, commissioning support.
+
+## Key pages
+
+- [Home](https://mesigroup.co.za/): company overview
+- [About](https://mesigroup.co.za/about.html): vision, mission, core values, BEE/transformation status, HSE commitment
+- [Divisions](https://mesigroup.co.za/divisions.html): full detail on all six divisions and their services
+- [Contact](https://mesigroup.co.za/contact.html): enquiry form, office address, phone, email
+
+## Contact
+
+- Email: info@mesigroup.co.za (general enquiries), sales@mesigroup.co.za (quotes and sales)
+- Phone: +27 71 853 4802
+- Address: 28 Amethyst Road, Centurion, Gauteng 0157, South Africa

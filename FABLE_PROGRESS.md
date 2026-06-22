@@ -108,3 +108,61 @@ Legal pages were pushed as commit `9e1c796`. Dev server: `node serve.mjs` → ht
 
 ## Resume Point
 Both changes deployed. Last commit: `02ea7bb`. Dev server: `node serve.mjs` → http://localhost:3000.
+
+---
+
+# Session 2026-06-22 — Contact Form Backend + Go-Live
+
+**Status: SITE IS LIVE** at `https://mesigroup.co.za` (SSL valid). One outstanding item below, everything else complete.
+
+## Changes
+1. **Contact form backend** — `api/contact.js` (new Vercel serverless function) sends via Resend instead of the old fake `setTimeout`. Routes to `sales@mesigroup.co.za` if a specific division is selected, `info@mesigroup.co.za` if blank/"General Enquiry". `contact.html`'s `handleSubmit` now does a real `fetch('/api/contact')`.
+2. **Email domain correction** — site-wide `mesi.co.za` → `mesigroup.co.za` (the real registered domain) across `contact.html`, `index.html`, `privacy.html`, `terms.html`, `js/components.js`.
+3. **Resend domain verification** — `mesigroup.co.za` verified in Resend (DKIM + SPF + MX on a `send.` subdomain, doesn't touch the existing cPanel mail setup at domains.co.za). `FROM_EMAIL` sends as `noreply@mesigroup.co.za`.
+4. **Spam protection** — hidden honeypot field (`website`, bots get a fake `200 ok` so they don't adapt) + Cloudflare Turnstile widget, verified server-side in `api/contact.js` before any email sends. Needed because Vercel's Deployment Protection had to be turned off for Production (was blocking real visitors with a Vercel-login wall) — turning it off made `/api/contact` publicly POST-able, hence the spam protection.
+5. **SEO basics** — added `robots.txt` + `sitemap.xml` (neither existed before).
+6. **Custom domain connected** — `mesigroup.co.za` + `www.mesigroup.co.za` added to the Vercel project, apex A record at domains.co.za changed from `169.239.218.68` → `76.76.21.21`. SSL auto-provisioned. All 6 pages + robots.txt/sitemap.xml verified `200` on the live domain.
+7. **Secrets workflow** — added a "Secrets & API Keys" section to `CLAUDE.md`: future API keys go into `.env` via a placeholder rather than being typed into chat.
+
+## Environment / Accounts Set Up This Session
+- **Resend** (resend.com, signed in as keethanb@gmail.com) — domain `mesigroup.co.za` verified, API key in `.env` (`RESEND_API_KEY`) and Vercel env vars (Production + Preview).
+- **Cloudflare Turnstile** — widget created for `mesigroup.co.za` (+ localhost for testing). Secret key in `.env` (`TURNSTILE_SECRET_KEY`) and Vercel env vars. Site key hardcoded in `contact.html` (public by design).
+- **Vercel CLI** authenticated locally (`npx vercel`) and linked to `keethan-balkisson-s-projects/mesi-test-website`.
+- **Vercel Deployment Protection** turned off for Production (was gating real visitors behind a Vercel login wall — caught during go-live testing, not present before this session... actually it was already on, just never noticed until now).
+
+## Known Gotcha (not a bug, just a Windows quirk)
+`vercel dev` crashes locally on Windows with a libuv assertion error (`UV_HANDLE_CLOSING`) whenever `api/contact.js` makes more than one outbound fetch in a single invocation (Turnstile verify + Resend send). This does **not** happen on real Vercel infrastructure (Linux) — confirmed via a real preview deployment. If local testing of `/api/contact` is needed again, prefer invoking the handler directly with a mock req/res (bypassing `vercel dev`) over trusting the local dev server's response.
+
+## Outstanding — Not Yet Resolved
+- **Legal entity name in `privacy.html` / `terms.html`**: currently just says "MESI." Flagged back on 2026-06-11 too. Need the **full registered company name + company registration number** from the owner (via the user's mother, who does bookkeeping/consulting for the company) to make the legal pages accurate. Low urgency — doesn't block the site being live — but should be revisited before relying on these pages for actual legal protection.
+
+## Resume Point
+Site is live and fully functional. Next session: check if the user has the registered entity name/reg number yet; if so, update `privacy.html` + `terms.html` and push. Otherwise, ask again or move to other work (e.g. sourcing the optional real photos listed in the "Assets Needed" table near the top of this file).
+
+---
+
+# Session 2026-06-22 (cont.) — SEO / AI-Discoverability / Advertising Punch List
+
+**Goal:** get the live site found by search engines, surfaced by AI chatbots/answer engines, and laid out a B2B-appropriate advertising plan. Status of each item tracked below — **check this list first if resuming.**
+
+## A. Technical SEO/AI (implemented by Claude, in this repo)
+- [x] Canonical `<link rel="canonical">` tag on all 6 pages
+- [x] Open Graph + Twitter Card meta tags on all 6 pages (using `Hero.jpg` as default share image)
+- [x] JSON-LD `Organization` schema on index/about/divisions/contact (name, logo, address, contact points). Skipped on privacy/terms — low-value for legal pages.
+- [x] JSON-LD `Service` schema per division (6 entries) on `divisions.html`, linked via `provider: {"@id": ".../#organization"}`
+- [x] `llms.txt` created at project root — plain-language company/division/contact summary for AI crawlers
+- [x] Image `alt` text audit — all real `<img>` tags already have good descriptive alt text (divisions.html); division thumbnails elsewhere are CSS background-images behind text headings that already name the division, so no `alt` needed there. Nothing to fix.
+- [x] `sitemap.xml` — added `<lastmod>2026-06-22</lastmod>` to all 6 URLs (was missing entirely before)
+- [x] Verified on localhost: all 6 pages + llms.txt + sitemap.xml return 200, JSON-LD validated as parseable JSON via a Node script. **Not yet pushed** — ask user before committing per CLAUDE.md push rule.
+
+## B. External actions (user/owner to do — Claude can advise but not execute)
+- [ ] Google Search Console: verify `mesigroup.co.za`, submit `sitemap.xml`
+- [ ] Bing Webmaster Tools: same
+- [ ] Google Business Profile: create/claim listing for local + Maps search
+- [ ] LinkedIn company page (B2B buyers — plant engineers, procurement, mining ops — live here, not on consumer social)
+- [ ] South African industrial/engineering directory listings (e.g. SAIMechE, IMIESA-type bodies, Yellow Pages SA)
+- [ ] Google Search Ads on long-tail high-intent industrial terms (skip Facebook/Instagram/TikTok — wrong audience for B2B procurement)
+- [ ] Case-study/project content pages per division (real project write-ups) — doubles as SEO content + LinkedIn-shareable proof; needs project examples from the owner first
+
+## Resume Point
+If interrupted, re-open this file and continue down section A's checkboxes top to bottom (each is an independent, resumable HTML edit). Section B is a handoff list for the user/owner, not blocked by anything in A.
