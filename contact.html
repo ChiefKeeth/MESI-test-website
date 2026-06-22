@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact MESI — engineering and industrial solutions across Southern Africa. Get a quote, enquire about a division, or discuss your next project. sales@mesi.co.za | +27 71 853 4802">
+  <meta name="description" content="Contact MESI — engineering and industrial solutions across Southern Africa. Get a quote, enquire about a division, or discuss your next project. sales@mesigroup.co.za | +27 71 853 4802">
   <title>Contact — MESI Mechanical &amp; Electrical Systems Integration</title>
   <link rel="icon" type="image/png" href="brand_assets/Images/Mesi Symbol TB.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -125,13 +125,13 @@
               </div>
             </a>
 
-            <a href="mailto:sales@mesi.co.za" style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:rgba(201,148,26,0.04);border:1px solid rgba(201,148,26,0.12);border-radius:6px;text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(201,148,26,0.3)';this.style.background='rgba(201,148,26,0.07)'" onmouseout="this.style.borderColor='rgba(201,148,26,0.12)';this.style.background='rgba(201,148,26,0.04)'">
+            <a href="mailto:sales@mesigroup.co.za" style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:rgba(201,148,26,0.04);border:1px solid rgba(201,148,26,0.12);border-radius:6px;text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(201,148,26,0.3)';this.style.background='rgba(201,148,26,0.07)'" onmouseout="this.style.borderColor='rgba(201,148,26,0.12)';this.style.background='rgba(201,148,26,0.04)'">
               <div style="width:44px;height:44px;border-radius:8px;background:rgba(201,148,26,0.1);border:1px solid rgba(201,148,26,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <svg width="19" height="19" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3.5" width="13" height="10" rx="1.5"/><path d="M2 6l6.5 4L15 6"/></svg>
               </div>
               <div>
                 <div style="font-family:'Rajdhani',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#C9941A;margin-bottom:3px;">Email Us</div>
-                <div style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;color:#F2EDE0;">sales@mesi.co.za</div>
+                <div style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;color:#F2EDE0;">sales@mesigroup.co.za</div>
               </div>
             </a>
 
@@ -151,7 +151,7 @@
               </div>
               <div>
                 <div style="font-family:'Rajdhani',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#22A845;margin-bottom:3px;">Website</div>
-                <div style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;color:#F2EDE0;">www.mesi.co.za</div>
+                <div style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0.04em;color:#F2EDE0;">www.mesigroup.co.za</div>
               </div>
             </div>
           </div>
@@ -180,24 +180,42 @@
   <script>
     initPage('contact');
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
       const status = document.getElementById('form-status');
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
-      // Simulate send (replace with actual fetch to your backend/form service)
-      setTimeout(() => {
+      const payload = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to send message.');
+
         status.style.display = 'block';
         status.style.background = 'rgba(34,168,69,0.08)';
         status.style.border = '1px solid rgba(34,168,69,0.25)';
         status.style.color = '#22A845';
         status.textContent = '✓ Message received — we\'ll be in touch shortly.';
-        e.target.reset();
+        form.reset();
         btn.textContent = 'Message Sent';
         btn.style.background = 'linear-gradient(135deg,#22A845,#1A7A2E)';
-      }, 1200);
+      } catch (err) {
+        status.style.display = 'block';
+        status.style.background = 'rgba(220,60,60,0.08)';
+        status.style.border = '1px solid rgba(220,60,60,0.25)';
+        status.style.color = '#E05A5A';
+        status.textContent = `✕ ${err.message}`;
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      }
     }
   </script>
 

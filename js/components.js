@@ -83,7 +83,7 @@ function _getFooterHTML() {
         <div style="display:flex;flex-direction:column;gap:0.625rem;margin-top:1.5rem;">
           <div class="contact-item">
             <svg width="16" height="16" viewBox="0 0 17 17" fill="none" stroke="#C9941A" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3.5" width="13" height="10" rx="1.5"/><path d="M2 6l6.5 4L15 6"/></svg>
-            <a href="mailto:sales@mesi.co.za" class="footer-link" style="display:inline;font-size:0.875rem;">sales@mesi.co.za</a>
+            <a href="mailto:sales@mesigroup.co.za" class="footer-link" style="display:inline;font-size:0.875rem;">sales@mesigroup.co.za</a>
           </div>
           <div class="contact-item">
             <svg width="16" height="16" viewBox="0 0 17 17" fill="none" stroke="#22A845" stroke-width="1.5" stroke-linecap="round"><path d="M14.5 10.8l-2.1-.24a1.5 1.5 0 00-1.23.44l-1.53 1.53a11.25 11.25 0 01-4.9-4.9l1.54-1.54a1.5 1.5 0 00.43-1.23L6.47 2.77A1.5 1.5 0 005 1.5H3a1.5 1.5 0 00-1.5 1.6A14 14 0 0015 16.75a1.5 1.5 0 001.6-1.5v-3a1.5 1.5 0 00-2.1-1.45z"/></svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mesigroup.co.za/sitemap.xml
