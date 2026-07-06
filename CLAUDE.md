@@ -120,6 +120,28 @@ Sessions can be cut off at any time (usage/credit limits). To make sure work is 
 - Node: `C:\Program Files\nodejs\node.exe`
 - Git: prepend `$env:PATH = "C:\Program Files\Git\cmd;$env:PATH"` before git commands in PowerShell
 
+## Obsidian Vault Updates
+
+The user has a second-brain vault at `C:\Users\keeth\iCloudDrive\iCloud~md~obsidian\MeVault`. Drop a source `.md` file into `MeVault\raw\` at the checkpoints below — the vault's own agent handles full ingestion separately (don't create wiki/entity/concept pages yourself, just drop the raw source).
+
+### Checkpoints — write a vault source file when:
+1. **A major milestone completes** — site goes live, a significant new feature ships (contact form backend, SEO overhaul, new division page, etc.)
+2. **Client/company details change** — email, domain, address, division names, or BBBEE status — vault entity pages become stale without this
+3. **End of a meaningful session** — if the session covered enough new ground that the vault would give materially wrong context without an update (judgment call; skip routine fix sessions)
+4. **Never** for minor fixes, copy tweaks, or sessions where nothing changed that a future agent needs to know
+
+### How to write the file
+- Filename: `MESI Website — [Short Title] ([YYYY-MM-DD]).md`
+- Drop it in: `C:\Users\keeth\iCloudDrive\iCloud~md~obsidian\MeVault\raw\`
+- Format: standard vault source frontmatter (`title`, `type: note`, `tags`, `confidential: true`, `updated`) + a body that covers: what was built/changed, current site state, open items
+- Do **not** move it to `raw/ingested/` — only the vault agent does that after it processes the file
+- The existing MESI entity page in the vault (`wiki/entities/mesi.md`) has stale info — include the corrected current details in the raw file so the vault agent can update it during ingest
+
+### Current stale vault data to correct next update
+- Domain still listed as `mesi.co.za` → correct is `mesigroup.co.za`
+- Email still listed as `sales@mesi.co.za` → correct is `sales@mesigroup.co.za` / `info@mesigroup.co.za`
+- Site listed as test URL → site is live at `https://mesigroup.co.za`
+
 ## Secrets & API Keys
 - Never ask the user to paste a private/secret key (API keys, secret keys, tokens) into chat.
 - Instead, add a placeholder line to `.env` in the project root (e.g. `SOME_SECRET_KEY=paste-your-key-here`) and ask the user to fill it in directly via their editor.
