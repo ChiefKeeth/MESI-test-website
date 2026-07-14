@@ -1,6 +1,8 @@
 temporary screenshots/
+.playwright-mcp/
 .claude/
 node_modules/
+output.css
 .DS_Store
 Thumbs.db
 .env

@@ -1,0 +1,9 @@
+/* Tailwind source. Compiled to output.css by the CLI (see package.json scripts).
+   Kept minimal on purpose: css/style.css already holds all brand variables and
+   custom component classes (.shine-border, .nav-*, .legal-*, etc.) and loads
+   AFTER output.css so it keeps overriding — mirroring the old CDN load order.
+   Add repeating brand utilities here via @layer components { @apply ... } only
+   if a future change would otherwise repeat long class strings across pages. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
